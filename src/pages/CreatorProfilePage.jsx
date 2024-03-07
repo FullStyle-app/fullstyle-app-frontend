@@ -47,6 +47,17 @@ function CreatorProfilePage() {
                         ) : (
                             <button disabled style={{ backgroundColor: 'gray' }}>Github</button>
                         )}
+                        <div>
+                            <h2>Posts</h2>
+                            {creator.posts.map((post) => (
+                                <div key={post._id}>
+                                    <img src={post.image1} alt={post.title} />
+                                    <h3>{post.title}</h3>
+                                    <p>{post.description}</p>
+                                    <Link to={`/posts/${post._id}`}>View details</Link>
+                                </div>
+                            ))}
+                            </div>
                     </div>
                 )}
             </div>

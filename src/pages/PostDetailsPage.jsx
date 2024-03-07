@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import UpdatePost from '../components/UpdatePost';
 
 const API_URL = 'http://localhost:5005';
 
@@ -49,7 +50,9 @@ function PostsPage() {
               {post.author && (
                 <Link to={`/creators/${post.author._id}`}>{post.author.username}</Link>
               )}
+              <UpdatePost post={post._id} />
             </div>
+            
         )}
     </div>
         )}
