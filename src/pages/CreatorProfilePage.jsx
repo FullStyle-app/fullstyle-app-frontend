@@ -65,4 +65,7 @@ function CreatorProfilePage() {
     )
 }
 
+// infinite loop while maping through creator.posts
+// each post does need a specific key
+
 export default CreatorProfilePage;
