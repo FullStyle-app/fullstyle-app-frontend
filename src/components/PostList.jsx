@@ -17,7 +17,7 @@ function PostList() {
                 setError(error);
                 setLoading(false);
             });
-    })
+    }, [])
 
     return (
         <div className='posts'>

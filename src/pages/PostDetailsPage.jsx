@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import UpdatePost from '../components/UpdatePost';
+import CommentsPage from '../components/Comments';
+
 
 const API_URL = 'http://localhost:5005';
 
@@ -39,8 +41,6 @@ function PostsPage() {
         {post && (
             <div>
               <img src={post.image1} alt={post.title} />
-              <img src={post.image2} alt={post.title} />
-              <img src={post.image3} alt={post.title} />
               <h2>{post.title}</h2>
               <p>{post.description}</p>
               <p>{post.linkToWebsite}</p>
@@ -51,6 +51,7 @@ function PostsPage() {
                 <Link to={`/creators/${post.author._id}`}>{post.author.username}</Link>
               )}
               <UpdatePost post={post._id} />
+              <CommentsPage postId={id} />
             </div>
             
         )}

@@ -21,14 +21,56 @@ function UpdatePost(post) {
   
     const handleTitleChange = (e) => setTitle(e.target.value);
     const handleDescriptionChange = (e) => setDescription(e.target.value);
-    const handleImage1Change = (e) => setImage1(e.target.files[0]);
-    const handleImage2Change = (e) => setImage2(e.target.files[0]);
-    const handleImage3Change = (e) => setImage3(e.target.files[0]);
     const handleLinkToWebsiteChange = (e) => setLinkToWebsite(e.target.value);
     const handleLinkToCodeChange = (e) => setLinkToCode(e.target.value);
     const handleCategoryChange = (e) => setCategory(e.target.value);
     const handleTagsChange = (e) => setTags(e.target.value);
   
+    const handleFileUpload1 = (e) => {
+      console.log("The file to be uploaded is: ", e.target.files[0]);
+      const uploadData = new FormData();
+      uploadData.append("image1", e.target.files[0]);
+  
+      service
+        .uploadImage(uploadData)
+        .then((response) => {
+          console.log(response.image1);
+          setImage1(response.image1);
+        })
+        .catch((err) => console.log("Error while uploading the file: ", err));
+    };
+
+      // Function to handle file upload image2
+  const handleFileUpload2 = (e) => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
+    const uploadData = new FormData();
+    uploadData.append("image2", e.target.files[0]);
+
+    service
+      .uploadImage(uploadData)
+      .then((response) => {
+        console.log(response.image2);
+        setImage2(response.image2);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
+
+  // Function to handle file upload image3
+  const handleFileUpload3 = (e) => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
+    const uploadData = new FormData();
+    uploadData.append("image3", e.target.files[0]);
+
+    service
+      .uploadImage(uploadData)
+      .then((response) => {
+        console.log(response.image3);
+        setImage3(response.image3);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
+
+
     const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -70,7 +112,7 @@ function UpdatePost(post) {
             type="file"
             name="image1"
             value={image1}
-            onChange={handleImage1Change}
+            onChange={handleFileUpload1}
           />
   
           <label>Image 2:</label>
@@ -78,7 +120,7 @@ function UpdatePost(post) {
             type="file"
             name="image2"
             value={image2}
-            onChange={handleImage2Change}
+            onChange={handleFileUpload2}
           />
   
           <label>Image 3:</label>
@@ -86,7 +128,7 @@ function UpdatePost(post) {
             type="file"
             name="image3"
             value={image3}
-            onChange={handleImage3Change}
+            onChange={handleFileUpload3}
           />
   
           <label>Link to Website:</label>

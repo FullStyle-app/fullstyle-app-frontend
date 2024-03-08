@@ -1,14 +1,22 @@
+
 import axios from "axios";
- 
 
-function uploadImage(file) {
- 
- const baseURL= "http://localhost:5005/posts/create";
+const api = axios.create({
+  baseURL: "http://localhost:5005"
+  // withCredentials: true // => you might need this option if using cookies and sessions
+});
+
+const errorHandler = (err) => {
+  throw err;
+};
+
+const uploadImage = (file) => {
+  return api.post("/posts/upload", file)
+    .then(res => res.data)
+    .catch(errorHandler);
+};
 
 
-
-    return axios.post(`${baseURL}/upload`, file)
-      .then(res => res.data)
-      .catch((e) => console.log(e));
-  };
-   export default uploadImage;
+export default {
+  uploadImage
+};
