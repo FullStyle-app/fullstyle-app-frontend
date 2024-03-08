@@ -25,6 +25,9 @@ function CreatePostPage() {
   const handleCategoryChange = (e) => setCategory(e.target.value);
   const handleTagsChange = (e) => setTags(e.target.value);
 
+    // AUTH
+    const storedToken = localStorage.getItem('authToken');
+
   // Function to handle file upload image1
   const handleFileUpload1 = (e) => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
@@ -84,7 +87,7 @@ function CreatePostPage() {
     };
 
     axios
-      .post(`${API_URL}/posts/create`, requestBody)
+      .post(`${API_URL}/posts/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then((response) => {
         console.log("Post created:", response.data);
         navigate(`/posts/${response.data._id}`);

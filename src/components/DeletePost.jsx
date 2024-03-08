@@ -1,18 +1,34 @@
+import React from 'react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-function deletePost (){
-    const { id } = useParams();
-    const [post, setPost] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const API_URL = 'http://localhost:5005';
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        axios.delete(`${API_URL}/posts/${id}`)
-    }, [])
+const API_URL = "http://localhost:5005";
+
+const DeletePost = ({ postId }) => {
+
+  // AUTH
+  const storedToken = localStorage.getItem('authToken');
+
+  const handleDelete = () => {
+    axios
+      .delete(`${API_URL}/posts/${postId}`, { headers: { Authorization: `Bearer ${storedToken}`} })
+      .then(response => {
+        console.log('Post deleted');
+      })
+      .catch(error => {
+      
+        console.error('Error with deleting', error);
+      });
+  };
+
+  return (
+    <div>
+      <button onClick={handleDelete}>Delete Post</button>
+    </div>
+  );
+};
+
+export default DeletePost;
+
 
     
-}

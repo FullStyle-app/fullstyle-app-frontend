@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import CreatorPosts from '../components/CreatorPosts';
 
 function CreatorProfilePage() {
 
@@ -49,14 +50,7 @@ function CreatorProfilePage() {
                         )}
                         <div>
                             <h2>Posts</h2>
-                            {user.posts.map((post) => (
-                                <div key={user._id}>
-                                    <img src={post.image1} alt={post.title} />
-                                    <h3>{post.title}</h3>
-                                    <p>{post.description}</p>
-                                    <Link to={`/posts/${post._id}`}>View details</Link>
-                                </div>
-                            ))}
+                           < CreatorPosts id={id}/>
                             </div>
                     </div>
                 )}
@@ -65,7 +59,6 @@ function CreatorProfilePage() {
     )
 }
 
-// infinite loop while maping through creator.posts
-// each post does need a specific key
+
 
 export default CreatorProfilePage;
