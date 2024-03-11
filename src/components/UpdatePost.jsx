@@ -86,7 +86,13 @@ function UpdatePost() {
    }
 
 
-    axios.put(`${API_URL}/posts/${id}`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
+    axios.put(`${API_URL}/posts/${id}`, 
+    requestBody, 
+    { 
+      headers: { 
+        Authorization: `Bearer ${storedToken}`
+      } 
+    })
       .then((response) => {
         console.log('Post updated:', response.data);
         // Handle successful update, e.g., redirect to post details page
