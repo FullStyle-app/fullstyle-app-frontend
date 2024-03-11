@@ -12,7 +12,7 @@ function FavoritesList({ id }) {
   useEffect(() => {
     const fetchFavorites = () => {
       axios
-        .get(`http://localhost:5005/users/${id}/favorites`) // Remove extra forward slash
+        .get(`http://localhost:5005/users/favorites`) // Remove extra forward slash
         .then((response) => {
           setFavorites(response.data);
           setLoading(false);
@@ -28,7 +28,7 @@ function FavoritesList({ id }) {
     } else {
       navigate("/login"); // Redirect to login page if user is not authenticated
     }
-  }, [navigate, storedToken]);
+  }, [navigate, storedToken, id]); 
 
   return (
     <div>

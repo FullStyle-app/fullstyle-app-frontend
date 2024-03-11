@@ -15,7 +15,7 @@ const handleAddToFavorites = () => {
         navigate('/login');
         return;
     } // Redirect to login page if user is not authenticated
-    if (favorites.includes(postId.toString())) {
+    if (favorites.some((favorite) => favorite._id === postId)) {
         console.log('Already in favorites');
         return;
     } else {
