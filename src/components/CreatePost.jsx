@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
 
+
 const API_URL = "http://localhost:5005";
 
 function CreatePostPage() {
