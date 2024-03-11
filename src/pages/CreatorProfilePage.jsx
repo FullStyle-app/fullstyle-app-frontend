@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CreatorPosts from '../components/CreatorPosts';
+import FavoritesList from '../components/FavoritesList';
 
 function CreatorProfilePage() {
 
@@ -51,6 +52,7 @@ function CreatorProfilePage() {
                         <div>
                             <h2>Posts</h2>
                            < CreatorPosts id={id}/>
+                           < FavoritesList id={id}/>
                             </div>
                     </div>
                 )}

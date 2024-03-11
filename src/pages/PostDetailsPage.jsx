@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import UpdateForm from '../components/UpdatePost';
+import AddToFavorites from '../components/AddToFav';
 import CommentsPage from '../components/Comments';
 import DeletePost from '../components/DeletePost';
 
@@ -51,6 +51,8 @@ function PostsPage() {
                 <Link to={`/creators/${post.author._id}`}>{post.author.username}</Link>
               )}
               
+
+              <AddToFavorites postId={id} />
               <Link to={`/posts/${id}/edit`}>Update post</Link>
               <DeletePost postId={id} />
               <CommentsPage postId={id} />
