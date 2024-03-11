@@ -9,6 +9,7 @@ import ErrorPage from   './pages/ErrorPage'
 
 import CreatorProfilePage from './pages/CreatorProfilePage'
 import PostDetailsPage from './pages/PostDetailsPage'
+import UpdatePost from './components/UpdatePost'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LogInPage'
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/creators/:id" element={<CreatorProfilePage />} />
         
         <Route path="/posts/:id" element={<PostDetailsPage />} />
+        <Route path="/posts/:id/edit" element={<UpdatePost />} />
 
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />

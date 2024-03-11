@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -7,12 +5,13 @@ import { useParams } from 'react-router-dom';
 function CommentsPage({ postId }) {
   const [comments, setComments] = useState([]);
   const [newCommentText, setNewCommentText] = useState('');
+  const storedToken = localStorage.getItem('authToken');
 
 
   const fetchComments = () => {
 
     axios
-      .get(`/comments/'${postId}`)
+      .get(`http://localhost:5005/comments/${postId}`)
       .then(response => {
         setComments(response.data);
       })
@@ -24,9 +23,10 @@ function CommentsPage({ postId }) {
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
+    console.log('Submitting comment:', newCommentText);
 
     axios
-      .post('/comments/'+postId+'/create', { text: newCommentText })
+      .post(`http://localhost:5005/comments/${postId}`, { text: newCommentText }, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then(() => {
         fetchComments();
         setNewCommentText('');

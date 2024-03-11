@@ -61,7 +61,7 @@ function SignupPage(props) {
         <label>Username:</label>
         <input 
           type="text"
-          Username="username"
+          name="username"
           value={username}
           onChange={handleUsername}
         />
