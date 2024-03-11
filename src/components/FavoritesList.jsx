@@ -42,7 +42,6 @@ function FavoritesList({ id }) {
             <img src={favorite.image1} alt={favorite.title} />
             <h2>{favorite.title}</h2>
             <p>{favorite.description}</p>
-            <p>{favorite._id}</p>
             <Link to={`/posts/${favorite._id}`}>
               <button>Details</button>
             </Link>

@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import ErrorPage from   './pages/ErrorPage'
 
 import CreatorProfilePage from './pages/CreatorProfilePage'
+import EditProfilePage from './pages/EditProfilePage'
 import PostDetailsPage from './pages/PostDetailsPage'
 import UpdatePost from './components/UpdatePost'
 import SignUpPage from './pages/SignUpPage'
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/creators/:id" element={<CreatorProfilePage />} />
+        <Route path="/edit-profile/:id" element={<EditProfilePage />} />
         
         <Route path="/posts/:id" element={<PostDetailsPage />} />
         <Route path="/posts/:id/edit" element={<UpdatePost />} />
