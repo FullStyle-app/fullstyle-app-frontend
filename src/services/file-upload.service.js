@@ -16,7 +16,13 @@ const uploadImage = (file) => {
     .catch(errorHandler);
 };
 
+const uploadProfilePicture = (file) => {
+  return api.post("/users/upload", file)
+    .then(res => res.data)
+    .catch(errorHandler);
+}
 
 export default {
-  uploadImage
+  uploadImage,
+  uploadProfilePicture
 };

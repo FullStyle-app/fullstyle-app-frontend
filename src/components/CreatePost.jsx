@@ -105,7 +105,7 @@ function CreatePostPage() {
       <form onSubmit={handleSubmit}>
         {/* Other input fields */}
 
-        <label>Image 1:</label>
+        <label>Screenshot:</label>
         <input
           type="file"
           name="image1"
