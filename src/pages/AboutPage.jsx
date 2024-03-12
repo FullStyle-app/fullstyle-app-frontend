@@ -19,12 +19,15 @@ function Aboutpage() {
              </div>
              <br/>
              <h1> Creators</h1>
-                <p>Pauline and Dilan are two students from the Iron Hack School. They have created this app as a final project for their training.</p>
+                <p>With backgrounds as learners in the tech field via IronHack School, we understand the challenges, the triumphs, and the endless possibilities that come with mastering the craft of web development.
+
+Driven by a shared commitment to empowerment and progress, we set out to create a platform that not only serves the needs of our community but also fosters a sense of camaraderie and collaboration. It is our belief that by harnessing the power of technology, we can pave the way for a future where inclusivity, creativity, and innovation reign supreme.</p>
             </div>
             
             <div className="creators-about">
             
                 <section className="about-card">
+                    <img className="about-img" src="https://avatars.githubusercontent.com/u/139362431?v=4" alt="Pauline" />
                     <h3>Pauline</h3>
                     <p>FullStack Web Developer, UX/UI Designer, Sociology Student, Meme Queen</p>
                     <a href="https://github.com/Paulinecvt">
@@ -32,6 +35,7 @@ function Aboutpage() {
                     </a>
                 </section>
                 <section className="about-card">
+                    <img className="about-img" src="https://avatars.githubusercontent.com/u/151765025?v=4" alt="Dilan" />
                     <h3>Dilan</h3>
                     <p>FullStack Web Developer</p>
                     <a href="https://github.com/karkelo1">
