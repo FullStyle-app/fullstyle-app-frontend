@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import service from "../services/file-upload.service";
 
-const API_URL = "http://localhost:5005";
 
 
 function SignupPage(props) {
@@ -37,7 +36,7 @@ function SignupPage(props) {
   const requestBody = { email, password, username, img, bio, job, location, github};
 
   
-  axios.post(`${API_URL}/auth/signup`, requestBody)
+  axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, requestBody)
     .then((response) => {
       navigate('/login');
     })

@@ -17,7 +17,7 @@ const AddToFavorites = ({ postId }) => {
 
     axios
       .post(
-        "http://localhost:5005/users/favorites",
+        `${import.meta.env.VITE_API_URL}/users/favorites`,
         { postId },
         {
           headers: {

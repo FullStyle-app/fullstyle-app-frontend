@@ -74,7 +74,7 @@ function EditProfilePage() {
 
     axios
       .put(
-        `http://localhost:5005/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/users/${id}`,
         requestBody,
         {
           headers: {

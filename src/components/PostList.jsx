@@ -8,7 +8,7 @@ function PostList() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5005/posts')
+        axios.get(`${import.meta.env.VITE_API_URL}/posts`)
             .then((response) => {
                 setPosts(response.data);
                 setLoading(false);

@@ -6,7 +6,6 @@ import AddToFavorites from '../components/AddToFav';
 import CommentsPage from '../components/Comments';
 import DeletePost from '../components/DeletePost';
 
-const API_URL = 'http://localhost:5005';
 
 function PostsPage() {
     const { id } = useParams();
@@ -15,7 +14,7 @@ function PostsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`${API_URL}/posts/${id}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/posts/${id}`)
       .then(response => {
         setPost(response.data);
         setLoading(false);

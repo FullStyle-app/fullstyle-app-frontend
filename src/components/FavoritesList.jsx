@@ -13,7 +13,7 @@ function FavoritesList({ id }) {
   useEffect(() => {
     const fetchFavorites = () => {
       axios
-        .get(`http://localhost:5005/users/${id}/favorites`)
+        .get(`${import.meta.env.VITE_API_URL}/users/${id}/favorites`)
         .then((response) => {
           setFavorites(response.data);
           setLoading(false);

@@ -8,7 +8,7 @@ function CreatorPosts({id}) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:5005/posts/u/' + id)
+        axios.get(`${import.meta.env.VITE_API_URL}/posts/u/` + id)
         .then((posts) => {
             setPosts(posts.data);
             setLoading(false);
