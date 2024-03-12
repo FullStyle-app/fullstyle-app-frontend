@@ -3,8 +3,6 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
 
-const API_URL = "http://localhost:5005";
-
 const DeletePost = ({ postId }) => {
   const navigate = useNavigate();
 
@@ -13,7 +11,7 @@ const DeletePost = ({ postId }) => {
 
   const handleDelete = () => {
     axios
-      .delete(`${API_URL}/posts/${postId}`, { headers: { Authorization: `Bearer ${storedToken}`} })
+      .delete(`${import.meta.env.VITE_API_URL}/posts/${postId}`, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then(() => {
         console.log('Post deleted');
         navigate('/');
