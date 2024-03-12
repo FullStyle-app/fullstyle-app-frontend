@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5005"
+  baseURL: import.meta.env.VITE_API_URL
   // withCredentials: true // => you might need this option if using cookies and sessions
 });
 
@@ -16,7 +16,13 @@ const uploadImage = (file) => {
     .catch(errorHandler);
 };
 
+const uploadProfilePicture = (file) => {
+  return api.post("/users/upload", file)
+    .then(res => res.data)
+    .catch(errorHandler);
+}
 
 export default {
-  uploadImage
+  uploadImage,
+  uploadProfilePicture
 };

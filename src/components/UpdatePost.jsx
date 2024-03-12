@@ -4,7 +4,6 @@ import service from "../services/file-upload.service";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5005';
 
 function UpdatePost() {
   const {id} = useParams();
@@ -86,7 +85,13 @@ function UpdatePost() {
    }
 
 
-    axios.put(`${API_URL}/posts/${id}`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
+    axios.put(`${import.meta.env.VITE_API_URL}/posts/${id}`, 
+    requestBody, 
+    { 
+      headers: { 
+        Authorization: `Bearer ${storedToken}`
+      } 
+    })
       .then((response) => {
         console.log('Post updated:', response.data);
         // Handle successful update, e.g., redirect to post details page

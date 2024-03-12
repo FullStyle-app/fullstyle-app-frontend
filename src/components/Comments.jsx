@@ -11,7 +11,7 @@ function CommentsPage({ postId }) {
   const fetchComments = () => {
 
     axios
-      .get(`http://localhost:5005/comments/${postId}`)
+      .get(`${import.meta.env.VITE_API_URL}/comments/${postId}`)
       .then(response => {
         setComments(response.data);
       })
@@ -26,7 +26,7 @@ function CommentsPage({ postId }) {
     console.log('Submitting comment:', newCommentText);
 
     axios
-      .post(`http://localhost:5005/comments/${postId}`, { text: newCommentText }, { headers: { Authorization: `Bearer ${storedToken}`} })
+      .post(`${import.meta.env.VITE_API_URL}/comments/${postId}`, { text: newCommentText }, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then(() => {
         fetchComments();
         setNewCommentText('');

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FavoritesList({ id }) {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function FavoritesList({ id }) {
   useEffect(() => {
     const fetchFavorites = () => {
       axios
-        .get(`http://localhost:5005/users/favorites`) // Remove extra forward slash
+        .get(`${import.meta.env.VITE_API_URL}/users/${id}/favorites`)
         .then((response) => {
           setFavorites(response.data);
           setLoading(false);
@@ -28,22 +29,26 @@ function FavoritesList({ id }) {
     } else {
       navigate("/login"); // Redirect to login page if user is not authenticated
     }
-  }, [navigate, storedToken, id]); 
+  }, [navigate, storedToken, id]);
 
-  return (
-    <div>
-      <h1>Favorites</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {favorites.map((favorite) => (
-        <div key={favorite._id}>
-          <img src={favorite.image1} alt={favorite.title} />
-          <h2>{favorite.title}</h2>
-          <p>{favorite.description}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
+
+    return (
+      <div>
+        <h1>Favorites</h1>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>}
+        {favorites.map((favorite) => (
+          <div key={favorite._id}>
+            <img src={favorite.image1} alt={favorite.title} />
+            <h2>{favorite.title}</h2>
+            <p>{favorite.description}</p>
+            <Link to={`/posts/${favorite._id}`}>
+              <button>Details</button>
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
 export default FavoritesList;

@@ -3,15 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
 
-
-const API_URL = "http://localhost:5005";
-
 function CreatePostPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image1, setImage1] = useState("");
- // const [image2, setImage2] = useState("");
- // const [image3, setImage3] = useState("");
   const [linkToWebsite, setLinkToWebsite] = useState("");
   const [linkToCode, setLinkToCode] = useState("");
   const [category, setCategory] = useState("");
@@ -44,35 +39,6 @@ function CreatePostPage() {
       .catch((err) => console.log("Error while uploading the file: ", err));
   };
 
-  // Function to handle file upload image2
-  /* const handleFileUpload2 = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
-    const uploadData = new FormData();
-    uploadData.append("image2", e.target.files[0]);
-
-    service
-      .uploadImage(uploadData)
-      .then((response) => {
-        console.log(response.image2);
-        setImage2(response.image2);
-      })
-      .catch((err) => console.log("Error while uploading the file: ", err));
-  }; */
-
-  // Function to handle file upload image3
-  /* const handleFileUpload3 = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
-    const uploadData = new FormData();
-    uploadData.append("image3", e.target.files[0]);
-
-    service
-      .uploadImage(uploadData)
-      .then((response) => {
-        console.log(response.image3);
-        setImage3(response.image3);
-      })
-      .catch((err) => console.log("Error while uploading the file: ", err));
-  }; */
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -88,7 +54,7 @@ function CreatePostPage() {
     };
 
     axios
-      .post(`${API_URL}/posts/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
+      .post(`${import.meta.env.VITE_API_URL}/posts/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then((response) => {
         console.log("Post created:", response.data);
         navigate(`/posts/${response.data._id}`);
@@ -106,7 +72,7 @@ function CreatePostPage() {
       <form onSubmit={handleSubmit}>
         {/* Other input fields */}
 
-        <label>Image 1:</label>
+        <label>Screenshot:</label>
         <input
           type="file"
           name="image1"
