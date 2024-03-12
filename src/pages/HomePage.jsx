@@ -1,15 +1,14 @@
 import React from "react";
 import PostList from "../components/PostList";
 import CreatePost from "../components/CreatePost";
-import Footer from "../components/Footer";
-
+import '../CSS/Homepage.css';
 function Homepage() {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="home">
+      <h1>Hi Nerds, find your Fullstyle🚀</h1>
       <PostList />
       <CreatePost />
-      <Footer />
+
     </div>
   );
 } 

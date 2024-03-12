@@ -1,28 +1,47 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-
-
-function Navbar () {
-    return (
-        <nav>
-            <Link to="/">
-        <button>Home</button>
-      </Link>
-      <Link to="/signup">
-        <button>SignUp</button>
-      </Link>
-      <Link to="/login">
-        <button>Login</button>
-        </Link>
-        <Link to="/about">
-          <button>About</button>
-        </Link>
-
-
-
-
-        </nav>
-    )
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faSignInAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import '../CSS/Navbar.css';
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <ul className="nav-links">
+        <li>
+          <Link to="/">
+            <button>
+              <FontAwesomeIcon icon={faHome} />
+              Home
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/signup">
+            <button>
+              <FontAwesomeIcon icon={faUser} />
+              Sign Up
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/login">
+            <button>
+              <FontAwesomeIcon icon={faSignInAlt} />
+              Login
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/about">
+            <button>
+              <FontAwesomeIcon icon={faInfoCircle} />
+              About
+            </button>
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;

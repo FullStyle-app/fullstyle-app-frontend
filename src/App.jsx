@@ -13,6 +13,7 @@ import PostDetailsPage from './pages/PostDetailsPage'
 import UpdatePost from './components/UpdatePost'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LogInPage'
+import Footer from './components/Footer'
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
 
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
