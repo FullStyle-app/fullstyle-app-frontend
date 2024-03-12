@@ -1,0 +1,71 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.app-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B283D;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.app-about h1 {
+    color: #B8D2CF;
+    font-size: 5vh;
+}
+
+.app-about p {
+    color: #B8D2CF;
+    font-size: 2vh;
+}
+
+.creators-about {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 40vw;
+    background-color: #1B283D;
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+
+.about-card h3 {
+    color: #B8D2CF;
+    font-size: 3vh;
+}
+
+.about-card p {
+    color: #B8D2CF;
+    font-size: 2vh;
+    
+}
+
+.github {
+    height: 7vh
+}
+
+@media screen and (max-width: 768px){
+    .creators-about {
+        flex-direction: column;
+    }
+    .about-card {
+        width: 80vw;
+    }
+}
