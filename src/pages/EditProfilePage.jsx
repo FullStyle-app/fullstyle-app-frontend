@@ -26,7 +26,6 @@ function EditProfilePage() {
   // AUTH
   const storedToken = localStorage.getItem("authToken");
 
-
   // PROFILE PICTURE UPLOAD
   const handleFileUpload = (e) => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
@@ -36,8 +35,7 @@ function EditProfilePage() {
     service
       .uploadProfilePicture(uploadData)
       .then((response) => {
-        console.log(response);
-        setImg(response);
+        setImg(response.img);
       })
       .catch((err) => console.log("Error while uploading the file: ", err));
   };
@@ -50,7 +48,7 @@ function EditProfilePage() {
 
     // Include Bio if it's not empty
     if (bio.trim() !== "") {
-     requestBody.bio = bio;
+      requestBody.bio = bio;
     }
 
     // Include Job if it's not empty
@@ -60,28 +58,23 @@ function EditProfilePage() {
 
     // Include Location if it's not empty
     if (location.trim() !== "") {
-     requestBody.location = location;
+      requestBody.location = location;
     }
 
     // Include Github if it's not empty
     if (github.trim() !== "") {
-     requestBody.github = github;
+      requestBody.github = github;
     }
 
-    // always print an empty string in the img field
-
-
-
-    axios
-      .put(
-        `${import.meta.env.VITE_API_URL}/users/${id}`,
-        requestBody,
-        {
-          headers: {
-            Authorization: `Bearer ${storedToken}`,
-            "Content-Type": "multipart/form-data"
-          },
-        }
+    // Include img if it's not empty
+    if (img !== "") {
+      requestBody.img = img;
+    };
+    
+    axios.put(
+       `${import.meta.env.VITE_API_URL}/users/${id}`, 
+        requestBody, 
+        { headers: { Authorization: `Bearer ${storedToken}`} }
       )
       .then((response) => {
         console.log(response);
@@ -90,11 +83,7 @@ function EditProfilePage() {
       .catch((error) => {
         console.log("Error:", error);
       });
-
-    };
-
-
-
+  };
 
   return (
     <div>
@@ -119,6 +108,6 @@ function EditProfilePage() {
       </form>
     </div>
   );
-};
+}
 
 export default EditProfilePage;
