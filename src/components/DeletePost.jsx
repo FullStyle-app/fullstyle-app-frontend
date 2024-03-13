@@ -13,7 +13,12 @@ const DeletePost = ({ postId }) => {
   // AUTH
   const storedToken = localStorage.getItem('authToken');
 
+
   const handleDelete = () => {
+    const confirmed = window.confirm("Are you sure you want to delete this post?");
+    if (!confirmed) {
+      return;
+    } else {
     axios
       .delete(`${import.meta.env.VITE_API_URL}/posts/${postId}`, { headers: { Authorization: `Bearer ${storedToken}`} })
       .then(() => {
@@ -25,7 +30,7 @@ const DeletePost = ({ postId }) => {
         console.error('Error with deleting', error);
       });
   };
-
+  };
 
 
   return (
