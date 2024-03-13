@@ -10,7 +10,8 @@ function Footer() {
 
 
       <div className='thankyou'>
-        <a
+        <h3 >Visit our GitHub to see cool things!</h3>
+        <a 
           href="https://github.com/FullStyle-app"
           target="_blank"
         >

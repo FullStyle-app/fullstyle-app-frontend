@@ -29,17 +29,11 @@ function PostList() {
                     <img
                         src={post.image1}
                         alt={post.title}
-                        style={{
-                            width: '100%',
-                            height: '200px',
-                            objectFit: 'cover',
-                            borderTopLeftRadius: '10px',
-                            borderTopRightRadius: '10px',
-                        }}
+                       
                     />
                     <div className="post-content">
                         <h2>{post.title}</h2>
-                        <p>{post.description}</p>
+                        
                         <button>
                             <Link to={`/posts/${post._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                               See Details
