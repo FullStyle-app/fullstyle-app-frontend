@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import service from "../services/file-upload.service";
 
 
 
@@ -45,12 +44,7 @@ function SignupPage(props) {
       setErrorMessage(errorDescription);
     })
 };
-const handleLogout = () => {
-  // Clear authentication token from local storage or browser memory
-  localStorage.removeItem('authToken');
- 
-  navigate('/login');
-};
+
   
   return (
     <div className="SignupPage">
@@ -120,8 +114,7 @@ const handleLogout = () => {
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
       
-      <button onClick={handleLogout}>Logout</button>
-
+   
      
       <p>Already have an account? <Link to={"/login"}>Login</Link></p>
     </div>

@@ -8,10 +8,6 @@ import { AuthContext } from '../context/auth.context';
 function Navbar() {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
-  const handleLogout = () => {
-    logout();
-  };
-
   return (
     <nav className="navbar">
       <ul className="nav-links">
@@ -24,28 +20,28 @@ function Navbar() {
           </Link>
         </li>
         {!isAuthenticated && (
-          <li>
-            <Link to="/signup">
-              <button>
-                <FontAwesomeIcon icon={faUser} />
-                Sign Up
-              </button>
-            </Link>
-          </li>
-        )}
-        {!isAuthenticated && (
-          <li>
-            <Link to="/login">
-              <button>
-                <FontAwesomeIcon icon={faSignInAlt} />
-                Login
-              </button>
-            </Link>
-          </li>
+          <>
+            <li>
+              <Link to="/signup">
+                <button>
+                  <FontAwesomeIcon icon={faUser} />
+                  Sign Up
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/login">
+                <button>
+                  <FontAwesomeIcon icon={faSignInAlt} />
+                  Login
+                </button>
+              </Link>
+            </li>
+          </>
         )}
         {isAuthenticated && (
           <li>
-            <button onClick={handleLogout}>
+            <button onClick={logout}>
               <FontAwesomeIcon icon={faSignOutAlt} />
               Logout
             </button>
