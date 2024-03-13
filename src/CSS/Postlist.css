@@ -1,0 +1,55 @@
+.postlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    width: 80vw; /* Adjusted width to 80% of the viewport width */
+    max-width: 1000px; /* Added max-width to prevent container from becoming too wide */
+    margin: 20px auto; /* Centering the container */
+    padding: 20px;
+    gap: 20px;
+}
+
+.post-card {
+    background-color: #1B283D;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px); /* Adjusted width to take up half of the container minus margin */
+    margin-bottom: 20px; /* Added margin-bottom */
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Ensure images fit within rounded corners */
+}
+
+.club-info {
+    padding: 10px;
+}
+.post-content button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(231, 119, 54);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.post-content button:hover {
+    background-color: #FFA500; /* Orange on hover */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .post-card {
+        width: calc(100% - 20px); /* Adjusted width to take up full width minus margin */
+    }
+}

@@ -6,25 +6,26 @@ import '../CSS/Navbar.css';
 import { AuthContext } from '../context/auth.context';
 
 function Navbar() {
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isLoggedIn, logOutUser,  user  } = useContext(AuthContext);
 
   return (
     <nav className="navbar">
       <ul className="nav-links">
+
         <li>
           <Link to="/">
             <button>
-              <FontAwesomeIcon icon={faHome} />
+              <FontAwesomeIcon icon={faHome} style={{ color: 'orange' }} />
               Home
             </button>
           </Link>
         </li>
-        {!isAuthenticated && (
+        {!isLoggedIn && (
           <>
             <li>
               <Link to="/signup">
                 <button>
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faUser} style={{ color: 'orange' }} />
                   Sign Up
                 </button>
               </Link>
@@ -32,17 +33,17 @@ function Navbar() {
             <li>
               <Link to="/login">
                 <button>
-                  <FontAwesomeIcon icon={faSignInAlt} />
+                  <FontAwesomeIcon icon={faSignInAlt} style={{ color: 'orange' }} />
                   Login
                 </button>
               </Link>
             </li>
           </>
         )}
-        {isAuthenticated && (
+        {isLoggedIn && (
           <li>
-            <button onClick={logout}>
-              <FontAwesomeIcon icon={faSignOutAlt} />
+            <button onClick={logOutUser}>
+              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
               Logout
             </button>
           </li>
@@ -50,11 +51,21 @@ function Navbar() {
         <li>
           <Link to="/about">
             <button>
-              <FontAwesomeIcon icon={faInfoCircle} />
+              <FontAwesomeIcon icon={faInfoCircle} style={{ color: 'orange' }} />
               About
             </button>
           </Link>
         </li>
+        {isLoggedIn && user && (
+          <li>
+            <Link to={`/creators/${user._id}`}>
+              <button>
+                <FontAwesomeIcon icon={faUser} style={{ color: 'orange' }} />
+                {user.username}
+              </button>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -1,0 +1,56 @@
+.CreatePostPage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  input[type="file"],
+  input[type="text"] {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid transparent;
+    background-color: #333; /* Background color for inputs */
+    color: white;
+    border-radius: 5px;
+    outline: none; /* Remove default input focus outline */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ffb300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: orange;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
