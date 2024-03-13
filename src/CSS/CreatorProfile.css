@@ -168,10 +168,6 @@ h1 {
 
 }
 
-.addtofav {
-    height: 4vh;
-}
-
 .fav-board {
     display: flex;
     justify-content: center;

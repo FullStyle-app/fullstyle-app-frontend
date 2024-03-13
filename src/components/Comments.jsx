@@ -41,7 +41,7 @@ function CommentsPage({ postId }) {
   }, [postId]);
 
   return (
-    <div>
+    <div className='comments-section'>
       <h1>Comments</h1>
       
       {Array.isArray(comments) && comments.length > 0 ? (
@@ -51,10 +51,12 @@ function CommentsPage({ postId }) {
           </div>
         ))
       ) : (
-        <p>No comments available</p>
+        <p>Be the first to comment !</p>
+        
       )}
    
-   
+   <br/>
+   <div className="comment-form">
       <textarea
         value={newCommentText}
         onChange={e => setNewCommentText(e.target.value)}
@@ -62,6 +64,7 @@ function CommentsPage({ postId }) {
       />
       
       <button onClick={handleSubmitComment}>Submit Comment</button>
+    </div>
     </div>
   );
 }
