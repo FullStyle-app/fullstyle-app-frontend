@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faSignInAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import '../CSS/Navbar.css';
+import { AuthContext } from '../context/auth.context';
+
 function Navbar() {
   return (
     <nav className="navbar">
@@ -38,6 +40,9 @@ function Navbar() {
               About
             </button>
           </Link>
+        </li>
+        <li>
+          
         </li>
       </ul>
     </nav>

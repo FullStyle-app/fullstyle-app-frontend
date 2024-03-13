@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import FavoritesList from "../components/Favourite";
 
 import { Link } from "react-router-dom";
 import CreatorPosts from "../components/CreatorPosts";
+
 import FavoritesList from "../components/FavoritesList";
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import '../CSS/Footer.css';
+import githubblue from '../img/github-icon-blue.png';
 
 function Footer() {
   return (
@@ -8,16 +10,13 @@ function Footer() {
 
 
       <div className='thankyou'>
-        Check out the source code on{' '}
         <a
           href="https://github.com/FullStyle-app"
           target="_blank"
-
         >
-          GitHub
+          <img src={githubblue} alt="github-logo" />
         </a>
       </div>
-      <p>Thank you to the Ironhack family!</p>
 
     </footer>
   );
