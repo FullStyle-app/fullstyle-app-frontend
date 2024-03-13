@@ -1,11 +1,15 @@
 body {
     margin: 37px;
     padding: 0;
-    background-color:  #ba3434;
     background-size: cover;
     background-position: center;
     font-family: 'Share Tech Mono', monospace;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/background.png");
     /* Ensure body takes up at least the height of the viewport */
 }
 h1{
