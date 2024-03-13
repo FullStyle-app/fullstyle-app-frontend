@@ -35,12 +35,15 @@ function CreatorPosts({ id }) {
           <div>
             {posts.map((post) => (
               <div key={post._id} className="post-card">
-                <section className="post-info">
+                
                 <Link to={`/posts/${post._id}`}>
                 <img src={post.image1} alt={post.title} />
+                </Link>
+                <div>
                   <h3>{post.title}</h3>
-                  </Link>
-                </section>
+                  <label>{post.category}</label>
+                </div>
+
                 
                 <section className="buttons-board">
                   <Link to={`/posts/${id}/edit`}>
@@ -54,7 +57,9 @@ function CreatorPosts({ id }) {
                   <DeletePost postId={id} />
 
                 </section>
+                
               </div>
+              
             ))}
           </div>
         )}

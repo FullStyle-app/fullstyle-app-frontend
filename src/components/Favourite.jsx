@@ -37,15 +37,16 @@ function FavoritesList({ id }) {
 
     return (
       <div className='fav-board'>
-        <h1>Their Favorite</h1>
+        <h1>Their Favorites</h1>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
         {favorites.map((favorite) => (
           <div className='fav-card' key={favorite._id}>
             <Link to={`/posts/${favorite._id}`}>
             <img src={favorite.image1} alt={favorite.title} />
-            <h3>{favorite.title}</h3>
             </Link>
+            <h3>{favorite.title}</h3>
+            <label>{favorite.category}</label>
           </div>
         ))}
       </div>

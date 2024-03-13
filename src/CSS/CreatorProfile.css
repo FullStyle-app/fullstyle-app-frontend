@@ -12,7 +12,15 @@ h1 {
 
 }
 
-
+label {
+    font-size: 2vh;
+    background-color: #FFC159;
+    color: black;
+    text-align: center;
+    margin: 3vw;
+    padding: 0.75vw;
+    font-size: 1.5vh;
+}
 
 .creator-identity {
     display: flex;
@@ -102,39 +110,28 @@ h1 {
 
 .post-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: #1B283D;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80vw;
-    gap: 10vh;
-    flex-wrap: wrap;
-    
 }
 
-.post-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 5vw;
+.post-card img {
+    width: 30vw;
+    height: auto;
+    border-radius: 10px;
+    margin: 3vw;
 
 }
-
 .post-card h3 {
     font-size: 2vh;
     color: #fff;
     text-align: center;
-
 }
 
-.post-card img {
-    width: 20vw;
-    height: auto;
-    border-radius: 10px;
-}
 
 .post-card:hover {
     background-color: #2E3E50;
@@ -143,12 +140,10 @@ h1 {
 
 .buttons-board {
     display: flex;
-    justify-content: end;
     align-items: center;
     flex-direction: row;
     gap: 10px;
-    margin: 10px;
-    justify-items: center;
+    margin-right: 4vh;
 
 }
 
@@ -173,10 +168,11 @@ h1 {
     gap: 5vw;
 }
 
-.fav-board img {
+.fav-card img {
     width: 20vw;
     height: auto;
     border-radius: 10px;
+    margin: 3vw;
 }
 
 .fav-board h3 {
@@ -188,17 +184,17 @@ h1 {
 
 .fav-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: #1B283D;
     border-radius: 10px;
-    width: 80vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    flex-wrap: wrap;
+    width: 80vw;
 }
 
 .fav-card:hover {
     background-color: #2E3E50;
     transition: 0.5s;
 }
+
