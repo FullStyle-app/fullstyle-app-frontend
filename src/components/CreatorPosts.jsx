@@ -34,7 +34,7 @@ function CreatorPosts({ id }) {
         {posts && (
           <div>
             {posts.map((post) => (
-              <div key={post._id} className="post-card">
+              <div key={post._id} className="creator-post-card">
                 
                 <Link to={`/posts/${post._id}`}>
                 <img src={post.image1} alt={post.title} />
@@ -45,7 +45,7 @@ function CreatorPosts({ id }) {
                 </div>
 
                 
-                <section className="buttons-board">
+                <section className="creator-buttons-board">
                   <Link to={`/posts/${id}/edit`}>
                     <FontAwesomeIcon
                       className="edit-button"

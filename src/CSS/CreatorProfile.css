@@ -12,7 +12,7 @@ h1 {
 
 }
 
-label {
+.creator-board label {
     font-size: 2vh;
     background-color: #FFC159;
     color: black;
@@ -20,6 +20,25 @@ label {
     margin: 3vw;
     padding: 0.75vw;
     font-size: 1.5vh;
+}
+
+.creator-board {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.creator-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6vh;
+    margin-right: 6vh;
 }
 
 .creator-identity {
@@ -63,9 +82,11 @@ label {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
-    margin: 10px;
+    gap: 2vh;
     justify-items: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 1vh;
+    padding-bottom: 1vh;
 }
 
 .creator-bio {
@@ -78,7 +99,7 @@ label {
 }
 
 .github-icon {
-    width: 3.5vw;
+    width: 1.5vw;
     height: auto;
 
 
@@ -108,7 +129,7 @@ label {
 
 }
 
-.post-card {
+.creator-post-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,26 +140,26 @@ label {
     width: 80vw;
 }
 
-.post-card img {
+.creator-post-card img {
     width: 30vw;
     height: auto;
     border-radius: 10px;
     margin: 3vw;
 
 }
-.post-card h3 {
+.creator-post-card h3 {
     font-size: 2vh;
     color: #fff;
     text-align: center;
 }
 
 
-.post-card:hover {
+.creator-post-card:hover {
     background-color: #2E3E50;
     transition: 0.5s;
 }
 
-.buttons-board {
+.creator-buttons-board {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -169,7 +190,7 @@ label {
 }
 
 .fav-card img {
-    width: 20vw;
+    width: 30vw;
     height: auto;
     border-radius: 10px;
     margin: 3vw;

@@ -44,10 +44,13 @@ function CreatorProfilePage() {
 
   return (
     <>
-      <div>
+      
+        <div className="creator-header">
         <Link to={`/edit-profile/${id}`}>
           <button>Edit Profile</button>
         </Link>
+        </div>
+        <div className='creator-board'>
         {loading && <p>Loading...</p>}
         {user && (
           <div className="creator-identity">
@@ -61,11 +64,7 @@ function CreatorProfilePage() {
               <FontAwesomeIcon icon={ faLaptop } style={{color:'white'}} /> 
               <p>{user.job}</p>
               </section>
-            </div>
-
-            <div className="creator-right">
-              <h1>@{user.username}</h1>
-              <p>FullStyler since : {formatDate(user.created)}</p>
+              <section className='section'>
               {user.github ? (
                 <a href={user.github} target="_blank">
                   <FontAwesomeIcon className="github-icon" icon={faGithub} style={{color:'white'}} />
@@ -73,6 +72,14 @@ function CreatorProfilePage() {
               ) : (
                 <FontAwesomeIcon className="github-icon" disabled icon={faGithub} style={{color:'darkgray'}}/>
               )}
+              <p>@{user.username}'s codes</p>
+              </section>
+            </div>
+
+            <div className="creator-right">
+              <h1>@{user.username}</h1>
+              <p>FullStyler since : {formatDate(user.created)}</p>
+              
               <section className="creator-bio">
                 <p>{user.bio}</p>
               </section>

@@ -3,6 +3,7 @@ p {
     color: #fff;
     text-align: center;
     margin: 0;
+    
 }
 
 h1 {
@@ -47,7 +48,7 @@ h1 {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
-    
+
 }
 
 .post-info img {
