@@ -23,7 +23,7 @@ function Navbar() {
         <li>
           <Link to="/">
             <button>
-              <FontAwesomeIcon icon={faHome} style={{ color: 'orange' }} />
+              <FontAwesomeIcon icon={faHome} style={{ color:  "#FFC159" }} />
               Home
             </button>
           </Link>
@@ -31,7 +31,7 @@ function Navbar() {
         <li>
           <Link to="/about">
             <button>
-              <FontAwesomeIcon icon={faInfoCircle} style={{ color: 'orange' }} />
+              <FontAwesomeIcon icon={faInfoCircle} style={{ color: "#FFC159" }} />
               About Us
             </button>
           </Link>
@@ -41,7 +41,7 @@ function Navbar() {
             <li>
               <Link to="/signup">
                 <button>
-                  <FontAwesomeIcon icon={faUser} style={{ color: 'orange' }} />
+                  <FontAwesomeIcon icon={faUser} style={{ color: "#FFC159" }} />
                   Sign Up
                 </button>
               </Link>
@@ -49,7 +49,7 @@ function Navbar() {
             <li>
               <Link to="/login">
                 <button>
-                  <FontAwesomeIcon icon={faSignInAlt} style={{ color: 'orange' }} />
+                  <FontAwesomeIcon icon={faSignInAlt} style={{ color: "#FFC159" }} />
                   Login
                 </button>
               </Link>
@@ -61,7 +61,7 @@ function Navbar() {
           <li>
             <Link to={`/creators/${user._id}`}>
               <button>
-                <FontAwesomeIcon icon={faUser} style={{ color: 'orange' }} />
+                <FontAwesomeIcon icon={faUser} style={{ color:"#FFC159"}} />
                 {user.username}
               </button>
             </Link>
@@ -70,7 +70,7 @@ function Navbar() {
          {isLoggedIn && (
           <li>
             <button onClick={logOutUser}>
-              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
+              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: "#FFC159" }} />
               Logout
             </button>
           </li>

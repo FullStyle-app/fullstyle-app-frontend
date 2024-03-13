@@ -33,7 +33,7 @@ function PostList() {
                     />
                     <div className="post-content">
                         <h2>{post.title}</h2>
-                        
+                      
                         <button>
                             <Link to={`/posts/${post._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                               See Details

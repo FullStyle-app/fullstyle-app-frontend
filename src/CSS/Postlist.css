@@ -13,7 +13,7 @@
 
 
 .post-card {
-    background-color: #ffffff; /* Set background color to white */
+    background-color: #1B283D; /* Set background color to white */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.964);
     width: calc(50% - 20px); /* Adjusted width to take up half of the container minus margin */
@@ -27,7 +27,10 @@
     height: auto;
     border-radius: 10px; /* Ensure images fit within rounded corners */
 }
-
+.post-card h2 {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
 .club-info {
     padding: 10px;
 }
@@ -43,19 +46,19 @@
 .post-content button {
     border: none;
     border-radius: 10px;
-    background-color: rgb(231, 119, 54);
+    background-color: "#FFC159";
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 10px;
     margin: 4px 2px;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 .post-content button:hover {
-    background-color: #FFA500;
+    background-color: "#FFC159"
     /* Orange on hover */
 }
 

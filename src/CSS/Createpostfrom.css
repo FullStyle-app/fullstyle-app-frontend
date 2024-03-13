@@ -1,5 +1,5 @@
 .CreatePostPage {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: black;
@@ -46,7 +46,7 @@
   }
   
   button:hover {
-    background-color: orange;
+    background-color: rgb(212, 166, 79);
   }
   
   .error-message {
