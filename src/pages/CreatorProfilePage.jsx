@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import CreatorPosts from "../components/CreatorPosts";
-import FavoritesList from "../components/favoritesList";
+import FavoritesList from "../components/FavoritesList";
 
 
 
