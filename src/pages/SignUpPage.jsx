@@ -45,7 +45,12 @@ function SignupPage(props) {
       setErrorMessage(errorDescription);
     })
 };
-
+const handleLogout = () => {
+  // Clear authentication token from local storage or browser memory
+  localStorage.removeItem('authToken');
+ 
+  navigate('/login');
+};
   
   return (
     <div className="SignupPage">
@@ -114,11 +119,15 @@ function SignupPage(props) {
       </form>
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
+      
+      <button onClick={handleLogout}>Logout</button>
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+     
+      <p>Already have an account? <Link to={"/login"}>Login</Link></p>
     </div>
-  )
+  );
 }
+
+  
 
 export default SignupPage;
