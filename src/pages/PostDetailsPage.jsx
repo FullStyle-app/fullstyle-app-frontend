@@ -52,8 +52,6 @@ function PostsPage() {
               
 
               <AddToFavorites postId={id} />
-              <Link to={`/posts/${id}/edit`}>Update post</Link>
-              <DeletePost postId={id} />
               <CommentsPage postId={id} />
             </div>
             

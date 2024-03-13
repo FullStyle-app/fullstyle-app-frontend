@@ -2,12 +2,17 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
+//STYLE
+import '../CSS/CreatorProfile.css'
+import favIcon from '../img/fav-icon.png'
+
 const AddToFavorites = ({ postId }) => {
   const navigate = useNavigate();
   const storedToken = localStorage.getItem("authToken");
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [message, setMessage] = useState(null);
 
   const handleAddToFavorites = () => {
     if (!storedToken) {
@@ -27,9 +32,9 @@ const AddToFavorites = ({ postId }) => {
       )
       .then(() => {
         if (favorites.includes(postId)) {
-          return console.log("Post already added to favorites");
+           setMessage('This post is already in your favorites !')
         } else {
-          console.log("Post successfully added to favorites");
+          setMessage("Post successfully added to favorites");
           setFavorites([...favorites, postId]); // Update state
           navigate(`/posts/${postId}`);
         }
@@ -41,7 +46,8 @@ const AddToFavorites = ({ postId }) => {
 
   return (
     <div>
-      <button onClick={handleAddToFavorites}>Add to Favorites</button>
+      {message && <p>{message}</p>}
+      <img className="addtofav" onClick={handleAddToFavorites} src={favIcon} />
     </div>
   );
 };
