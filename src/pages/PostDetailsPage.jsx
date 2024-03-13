@@ -37,35 +37,53 @@ function PostsPage() {
   }
 
   return (
-    <div className="post-details">
-      <h1>Post</h1>
+    <div className="post-board">
+
+      <Link to="/">
+        <button>Back</button>
+      </Link>
+
+<div className="post-body">
       {loading && <p>Loading...</p>}
-      {post && (
-        <div className="post-info">
-          <img src={post.image1} alt={post.title} />
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          <p>{post.linkToWebsite}</p>
-          <p>{post.linkToCode}</p>
-          <p>{post.category}</p>
-          <p>{post.tags}</p>
-        </div>
-      )}
+      <div className='post-infos'>
+        {post && (
+          <>
+            <img src={post.image1} alt={post.title} />
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+            <p>{post.linkToWebsite}</p>
+            <p>{post.linkToCode}</p>
+            <label>{post.category}</label>
+            <p>{post.tags}</p>
+          </>
+        )}
+
+<div className="post-footer">
+            <p>Add to Fav :</p>
+      <AddToFavorites postId={id} />
+      </div>
+      </div>
+
+
       <div className="post-author">
         <section>
           {post.author && (
-            <Link to={`/creators/${post.author._id}`}>
-              <img src={post.author.img} alt={post.author.name} />
-              <h3>{post.author.username}</h3>
-            </Link>
+            <>
+              <img src={post.author.img} alt={post.author.username} />
+              <Link to={`/creators/${post.author._id}`}>
+                <h3>{post.author.username}</h3>
+              </Link>
+            </>
           )}
           <p>{post.author.job}</p>
         </section>
       </div>
 
-      <AddToFavorites postId={id} />
+      </div>
+     <div className="post-comments">
       <CommentsPage postId={id} />
-    </div>
+      </div>
+      </div>
   );
 }
 export default PostsPage;
