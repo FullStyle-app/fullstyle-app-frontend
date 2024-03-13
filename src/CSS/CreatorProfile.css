@@ -12,7 +12,34 @@ h1 {
 
 }
 
+.creator-board label {
+    font-size: 2vh;
+    background-color: #FFC159;
+    color: black;
+    text-align: center;
+    margin: 3vw;
+    padding: 0.75vw;
+    font-size: 1.5vh;
+}
 
+.creator-board {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.creator-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6vh;
+    margin-right: 6vh;
+}
 
 .creator-identity {
     display: flex;
@@ -55,9 +82,11 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
-    margin: 10px;
+    gap: 2vh;
     justify-items: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 1vh;
+    padding-bottom: 1vh;
 }
 
 .creator-bio {
@@ -70,7 +99,7 @@ h1 {
 }
 
 .github-icon {
-    width: 3.5vw;
+    width: 1.5vw;
     height: auto;
 
 
@@ -100,55 +129,42 @@ h1 {
 
 }
 
-.post-card {
+.creator-post-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: #1B283D;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80vw;
-    gap: 10vh;
-    flex-wrap: wrap;
-    
 }
 
-.post-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 5vw;
+.creator-post-card img {
+    width: 30vw;
+    height: auto;
+    border-radius: 10px;
+    margin: 3vw;
 
 }
-
-.post-card h3 {
+.creator-post-card h3 {
     font-size: 2vh;
     color: #fff;
     text-align: center;
-
 }
 
-.post-card img {
-    width: 20vw;
-    height: auto;
-    border-radius: 10px;
-}
 
-.post-card:hover {
+.creator-post-card:hover {
     background-color: #2E3E50;
     transition: 0.5s;
 }
 
-.buttons-board {
+.creator-buttons-board {
     display: flex;
-    justify-content: end;
     align-items: center;
     flex-direction: row;
     gap: 10px;
-    margin: 10px;
-    justify-items: center;
+    margin-right: 4vh;
 
 }
 
@@ -173,10 +189,11 @@ h1 {
     gap: 5vw;
 }
 
-.fav-board img {
-    width: 20vw;
+.fav-card img {
+    width: 30vw;
     height: auto;
     border-radius: 10px;
+    margin: 3vw;
 }
 
 .fav-board h3 {
@@ -188,17 +205,17 @@ h1 {
 
 .fav-card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: #1B283D;
     border-radius: 10px;
-    width: 80vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    flex-wrap: wrap;
+    width: 80vw;
 }
 
 .fav-card:hover {
     background-color: #2E3E50;
     transition: 0.5s;
 }
+
