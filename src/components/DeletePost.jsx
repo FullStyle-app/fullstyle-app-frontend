@@ -38,7 +38,7 @@ const DeletePost = ({ postId }) => {
       <FontAwesomeIcon
         className="delete-button"
         icon={faTrashCan}
-        style={{ color: '#FFC159' }}
+        style={{ color: '#FFC159', fontSize: '3vh' }}
         onClick={handleDelete}
       />
     </div>

@@ -3,6 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+//STYLE
+import '../CSS/CreatorProfile.css'
+
 function FavoritesList({ id }) {
   const navigate = useNavigate();
   const [favorites, setFavorites] = useState([]);
@@ -33,17 +36,15 @@ function FavoritesList({ id }) {
 
 
     return (
-      <div>
-        <h1>Favorites</h1>
+      <div className='fav-board'>
+        <h1>Their Favorite</h1>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
         {favorites.map((favorite) => (
-          <div key={favorite._id}>
-            <img src={favorite.image1} alt={favorite.title} />
-            <h2>{favorite.title}</h2>
-            <p>{favorite.description}</p>
+          <div className='fav-card' key={favorite._id}>
             <Link to={`/posts/${favorite._id}`}>
-              <button>Details</button>
+            <img src={favorite.image1} alt={favorite.title} />
+            <h3>{favorite.title}</h3>
             </Link>
           </div>
         ))}

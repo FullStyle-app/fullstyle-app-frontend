@@ -1,14 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import AddToFavorites from "../components/AddToFav";
 import DeletePost from "../components/DeletePost";
 
 //STYLE
 import "../CSS/CreatorProfile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRocket, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -37,23 +35,25 @@ function CreatorPosts({ id }) {
           <div>
             {posts.map((post) => (
               <div key={post._id} className="post-card">
-                <img src={post.image1} alt={post.title} />
                 <section className="post-info">
-                  <h2>{post.title}</h2>
-                  <p>{post.description}</p>
+                <Link to={`/posts/${post._id}`}>
+                <img src={post.image1} alt={post.title} />
+                  <h3>{post.title}</h3>
+                  </Link>
                 </section>
+                
                 <section className="buttons-board">
-                  <AddToFavorites postId={post._id} />
                   <Link to={`/posts/${id}/edit`}>
                     <FontAwesomeIcon
                       className="edit-button"
                       icon={faRocket}
-                      style={{ color: "#FFC159" }}
+                      style={{ color: "#FFC159", fontSize: '3vh' }}
                     />
-                  </Link>
+                    </Link>
+                  
                   <DeletePost postId={id} />
+
                 </section>
-                <Link to={`/posts/${post._id}`}>View details</Link>
               </div>
             ))}
           </div>
