@@ -1,44 +1,50 @@
 .navbar {
-  position: fixed;
+
+  position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: #1B283D;
-  padding: 10px;
+  width: 99%;
+  background-color: #a2a4a87c;
+  padding: 5px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 3D-like effect with box shadow */
+  padding: 2px 5px; 
+  display: flex; 
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Align items vertically */
 }
-  
-  .nav-links {
-    list-style: none; /* Remove default list style */
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-links li {
-    display: inline-block; /* Display list items horizontally */
-    margin-right: 20px;
-  }
-  
-  .nav-links li:last-child {
-    margin-right: 0; /* Remove margin from last list item */
-  }
-  
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .nav-links li button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease; /* Smooth transition on hover */
-  }
-  
-  .nav-links li button:hover {
-    transform: translateY(-2px); /* 3D-like effect on hover */
-  }
+
+.nav-links {
+  list-style: none;
+ 
+}
+
+.nav-links li {
+  display: inline-block;
+
+}
+
+
+.nav-links li a {
+  color: #000000;
+  text-decoration: none;
+
+}
+
+.nav-links li button {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li button:hover {
+  transform: translateY(-2px);
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}

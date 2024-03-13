@@ -5,7 +5,7 @@ import '../CSS/Homepage.css';
 function Homepage() {
   return (
     <div className="home">
-      <h1>Hi Nerds, find your Fullstyle🚀</h1>
+
       <PostList />
       <CreatePost />
 

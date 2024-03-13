@@ -4,19 +4,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faSignInAlt, faSignOutAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import '../CSS/Navbar.css';
 import { AuthContext } from '../context/auth.context';
+import logo from '../img/logo.png';
 
 function Navbar() {
   const { isLoggedIn, logOutUser,  user  } = useContext(AuthContext);
 
   return (
     <nav className="navbar">
+       <div className="logo">
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
+      </div>
       <ul className="nav-links">
+     
+     
 
         <li>
           <Link to="/">
             <button>
               <FontAwesomeIcon icon={faHome} style={{ color: 'orange' }} />
               Home
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/about">
+            <button>
+              <FontAwesomeIcon icon={faInfoCircle} style={{ color: 'orange' }} />
+              About Us
             </button>
           </Link>
         </li>
@@ -40,22 +56,7 @@ function Navbar() {
             </li>
           </>
         )}
-        {isLoggedIn && (
-          <li>
-            <button onClick={logOutUser}>
-              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
-              Logout
-            </button>
-          </li>
-        )}
-        <li>
-          <Link to="/about">
-            <button>
-              <FontAwesomeIcon icon={faInfoCircle} style={{ color: 'orange' }} />
-              About
-            </button>
-          </Link>
-        </li>
+       
         {isLoggedIn && user && (
           <li>
             <Link to={`/creators/${user._id}`}>
@@ -66,6 +67,15 @@ function Navbar() {
             </Link>
           </li>
         )}
+         {isLoggedIn && (
+          <li>
+            <button onClick={logOutUser}>
+              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
+              Logout
+            </button>
+          </li>
+        )}
+        
       </ul>
     </nav>
   );
