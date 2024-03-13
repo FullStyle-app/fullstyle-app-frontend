@@ -2,6 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
+// STYLE
+import '../CSS/CreatorProfile.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const DeletePost = ({ postId }) => {
   const navigate = useNavigate();
@@ -26,7 +30,12 @@ const DeletePost = ({ postId }) => {
 
   return (
     <div>
-      <button onClick={handleDelete}>Delete Post</button>
+      <FontAwesomeIcon
+        className="delete-button"
+        icon={faTrashCan}
+        style={{ color: '#FFC159' }}
+        onClick={handleDelete}
+      />
     </div>
   );
 };

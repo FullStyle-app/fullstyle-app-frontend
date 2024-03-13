@@ -2,6 +2,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
+//STYLE
+import '../CSS/CreatorProfile.css'
+import favIcon from '../img/fav-icon.png'
+
 const AddToFavorites = ({ postId }) => {
   const navigate = useNavigate();
   const storedToken = localStorage.getItem("authToken");
@@ -41,7 +45,7 @@ const AddToFavorites = ({ postId }) => {
 
   return (
     <div>
-      <button onClick={handleAddToFavorites}>Add to Favorites</button>
+      <img className="addtofav" onClick={handleAddToFavorites} src={favIcon} />
     </div>
   );
 };
