@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
+import "../CSS/Createpostfrom.css";
+
+
 
 function CreatePostPage() {
   const [title, setTitle] = useState("");
