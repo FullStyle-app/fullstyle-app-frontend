@@ -3,10 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import FavoritesList from "../components/Favourite";
 
+
 import { Link } from "react-router-dom";
 import CreatorPosts from "../components/CreatorPosts";
 
+//STYLE
 
+import "../CSS/CreatorProfile.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptop, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 function CreatorProfilePage() {
@@ -14,7 +20,6 @@ function CreatorProfilePage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const storedToken = localStorage.getItem("authToken");
-
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -27,7 +32,7 @@ function CreatorProfilePage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/users/" + id)
+      .get(`${import.meta.env.VITE_API_URL}/users/` + id)
       .then((user) => {
         setUser(user.data);
         setLoading(false);
@@ -45,29 +50,38 @@ function CreatorProfilePage() {
         </Link>
         {loading && <p>Loading...</p>}
         {user && (
-          <div>
-            <h1>{user.username}'s Profile Page</h1>
-            <img src={user.img} />
+          <div className="creator-identity">
+            <div className="creator-left">
+              <img src={user.img} />
+              <section className="section">
+              <FontAwesomeIcon icon={faLocationDot} style={{color:'white'}} /> 
+              <p>{user.location}</p>
+              </section>
+              <section className="section">
+              <FontAwesomeIcon icon={ faLaptop } style={{color:'white'}} /> 
+              <p>{user.job}</p>
+              </section>
+            </div>
 
-            <p>In the community since : {formatDate(user.created)}</p>
-            <p>Bio : {user.bio}</p>
-            <p>Job : {user.job}</p>
-            <p>Location : {user.location}</p>
-            {user.github ? (
-              <a href={user.github} target="_blank">
-                <button>Github</button>
-              </a>
-            ) : (
-              <button disabled style={{ backgroundColor: "gray" }}>
-                Github
-              </button>
-            )}
-            <div>
-              <CreatorPosts id={id} />
-              <FavoritesList id={id} />
+            <div className="creator-right">
+              <h1>@{user.username}</h1>
+              <p>FullStyler since : {formatDate(user.created)}</p>
+              {user.github ? (
+                <a href={user.github} target="_blank">
+                  <FontAwesomeIcon className="github-icon" icon={faGithub} style={{color:'white'}} />
+                </a>
+              ) : (
+                <FontAwesomeIcon className="github-icon" disabled icon={faGithub} style={{color:'darkgray'}}/>
+              )}
+              <section className="creator-bio">
+                <p>{user.bio}</p>
+              </section>
             </div>
           </div>
         )}
+
+        <CreatorPosts id={id} />
+        <FavoritesList id={id} />
       </div>
     </>
   );

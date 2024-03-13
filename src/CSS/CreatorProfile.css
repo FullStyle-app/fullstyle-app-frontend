@@ -1,0 +1,113 @@
+p {
+    font-size: 1.5vh;
+    color: #fff;
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 3vh;
+    color: #fff;
+    text-align: center;
+
+}
+
+
+.creator-identity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #1B283D;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    gap: 5vw;
+
+}
+
+.creator-left img {
+    width: 20vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+.creator-left {
+    display: flex-start;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.creator-right {
+    display: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+    justify-items: center;
+}
+
+.creator-bio {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 2vw;
+    padding: 2vw;
+}
+
+.github-icon {
+    width: 3.5vw;
+    height: auto;
+
+
+}
+
+.creator-posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1B283D;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    gap: 5vw;
+}
+
+.post-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #1B283D;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    gap: 5vw;
+}
+
+.post-card img {
+    width: 15vw;
+    height: auto;
+    border-radius: 10px;
+}
+
