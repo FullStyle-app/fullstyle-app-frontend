@@ -9,7 +9,7 @@ function Navbar() {
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   const handleLogout = () => {
-    logout(); // Assuming this function clears authentication state
+    logout();
   };
 
   return (
