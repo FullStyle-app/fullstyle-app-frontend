@@ -3,10 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
 import "../CSS/Createpostfrom.css";
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css'; // Import Prism.js stylesheet
-import 'prismjs/components/prism-javascript'; // Import the JavaScript language support
-// Import other language components as needed
+
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose your preferred syntax highlighting style
 
 function CreatePostPage() {
   const [title, setTitle] = useState("");
@@ -68,10 +67,6 @@ function CreatePostPage() {
       });
   };
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, [description]);
-
   const toggleForm = () => {
     setHideForm(!hideForm);
   };
@@ -91,7 +86,7 @@ function CreatePostPage() {
             onChange={handleFileUpload1}
             required
           />
-  
+
           <label>Title</label>
           <input
             type="text"
@@ -100,17 +95,22 @@ function CreatePostPage() {
             onChange={handleTitleChange}
             required
           />
-  
+
           <label>Description</label>
           <textarea
             name="description"
             value={description}
             onChange={handleDescriptionChange}
-            style={{ display: hideForm ? 'none' : 'block' }} // Hide/show the textarea based on hideForm state
-            className="language-javascript" // Add the appropriate language class for code highlighting
+            style={{ display: hideForm ? 'none' : 'block' }}
             placeholder="Paste your code here..."
           />
-  
+          <div style={{ marginTop: '20px', maxHeight: '200px', overflow: 'auto' }}>
+            <label>Preview:</label>
+            <SyntaxHighlighter language="javascript" style={dark}>
+              {description}
+            </SyntaxHighlighter>
+          </div>
+
           <label>Link to website</label>
           <input
             type="text"
@@ -118,7 +118,7 @@ function CreatePostPage() {
             value={linkToWebsite}
             onChange={handleLinkToWebsiteChange}
           />
-  
+
           <label>Link to code</label>
           <input
             type="text"
@@ -126,7 +126,7 @@ function CreatePostPage() {
             value={linkToCode}
             onChange={handleLinkToCodeChange}
           />
-  
+
           <label>Category</label>
           <input
             type="text"
@@ -134,7 +134,7 @@ function CreatePostPage() {
             value={category}
             onChange={handleCategoryChange}
           />
-  
+
           <label>Tags</label>
           <input
             type="text"
@@ -142,11 +142,12 @@ function CreatePostPage() {
             value={tags}
             onChange={handleTagsChange}
           />
-  
+
           <button type="submit">Create Post</button>
         </form>
       )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
+
     </div>
   );
 }
