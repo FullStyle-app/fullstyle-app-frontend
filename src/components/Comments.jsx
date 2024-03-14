@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+  //STYLE
+  import "../CSS/PostDetails.css";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import {faRocketchat} from "@fortawesome/free-brands-svg-icons";
 
 function CommentsPage({ postId }) {
   const [comments, setComments] = useState([]);
   const [newCommentText, setNewCommentText] = useState('');
   const storedToken = localStorage.getItem('authToken');
+
+
 
 
   const fetchComments = () => {
@@ -42,7 +48,7 @@ function CommentsPage({ postId }) {
 
   return (
     <div className='comments-section'>
-      <h1>Comments</h1>
+      <h1>Feedbacks</h1>
       
       {Array.isArray(comments) && comments.length > 0 ? (
         comments.map(comment => (
@@ -60,8 +66,10 @@ function CommentsPage({ postId }) {
       <textarea
         value={newCommentText}
         onChange={e => setNewCommentText(e.target.value)}
-        placeholder="Enter your comment"
+        placeholder="Remember, be nice and respectful !"
       />
+      
+      <FontAwesomeIcon icon={faRocketchat} style={{color:'#1B283D'}} onClick={handleSubmitComment}/>
       
       <button className ="btn"onClick={handleSubmitComment}>Submit Comment</button>
     </div>

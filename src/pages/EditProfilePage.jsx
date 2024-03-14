@@ -4,6 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+
+// STYLE
+import "../CSS/Forms.css";
+import favicon from "../img/fav-icon.png";
+
 function EditProfilePage() {
   const { id } = useParams();
   // EDIT PROFILE // STATES
@@ -86,25 +91,45 @@ function EditProfilePage() {
   };
 
   return (
-    <div>
+    <div className='edit-profile'>
+      <div className="header">
+      <img src={favicon} alt="favicon"/>
       <h1>Edit your profile</h1>
+      <img src={favicon} alt="favicon"/>
+      </div>
+      
       <form onSubmit={handleSubmit}>
+
+      <div className="pair">
         <label>Profile Picture</label>
         <input type="file" onChange={handleFileUpload} />
+        </div>
 
+        <div className="pair">
         <label>Bio</label>
         <input type="text" value={bio} onChange={handleBioChange} />
+        </div>
 
+        <div className="pair">
         <label>Job</label>
         <input type="text" value={job} onChange={handleJobChange} />
+</div>
 
+        <div className="pair">
         <label>Location</label>
         <input type="text" value={location} onChange={handleLocationChange} />
+        </div>
 
+        <div className="pair">
         <label>Github</label>
         <input type="text" value={github} onChange={handleGithubChange} />
+        </div>
 
-        <button className="btn"type="submit">Save</button>
+        <div className="buttons">
+        <button onClick={() => navigate('/')}>Cancel</button>
+        <button type="submit">Save</button>
+        </div>
+        
       </form>
     </div>
   );
