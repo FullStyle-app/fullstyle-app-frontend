@@ -102,7 +102,7 @@ function CreatePostPage() {
             required
           />
 
-          <label>Description</label>
+          <label>Your Code</label>
           <textarea
             name="description"
             value={description}
