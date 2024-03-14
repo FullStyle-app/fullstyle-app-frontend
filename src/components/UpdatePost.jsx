@@ -4,6 +4,9 @@ import service from "../services/file-upload.service";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
+//STYLE
+import '../CSS/Forms.css'
+import favicon from '../img/fav-icon.png'
 
 function UpdatePost() {
   const {id} = useParams();
@@ -108,30 +111,52 @@ function UpdatePost() {
 
   return (
     <div className="UpdatePostPage">
+      <div className="header">
+      <img src={favicon} alt="favicon"/>
       <h1>Update your Post</h1>
+      <img src={favicon} alt="favicon"/>
+      </div>
+
       <form onSubmit={handleSubmit}>
+      <div className="pair">
         <label>Title:</label>
         <input type="text" value={title} onChange={handleTitleChange} />
+        </div>
 
-        <label>Description:</label>
+        <div className="pair">
+        <label>Paste your CSS here :</label>
         <textarea value={description} onChange={handleDescriptionChange} />
+        </div>
 
+        <div className="pair">
         <label>Image 1:</label>
         <input type="file" onChange={handleFileUpload1} />
+        </div>
 
+        <div className="pair">
         <label>Link to Website:</label>
         <input type="text" value={linkToWebsite} onChange={handleLinkToWebsiteChange} />
+        </div>
 
+        <div className="pair">
         <label>Link to Code:</label>
         <input type="text" value={linkToCode} onChange={handleLinkToCodeChange} />
+        </div>
 
+        <div className="pair">
         <label>Category:</label>
         <input type="text" value={category} onChange={handleCategoryChange} />
+        </div>
 
+        <div className="pair">
         <label>Tags (separated by comma):</label>
         <input type="text" value={tags} onChange={handleTagsChange} />
+        </div>
 
-        <button type="submit">Update Post</button>
+        <div className="buttons">
+        <button onClick={() => navigate('/')}>Cancel</button>
+        <button type="submit">Update</button>
+        </div>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
