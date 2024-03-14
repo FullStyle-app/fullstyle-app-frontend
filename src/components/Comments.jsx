@@ -52,7 +52,7 @@ function CommentsPage({ postId }) {
       
       {Array.isArray(comments) && comments.length > 0 ? (
         comments.map(comment => (
-          <div key={comment._id}>
+          <div key={comment._id} className='comment'>
             <p>{comment.text}</p>
           </div>
         ))
@@ -69,7 +69,7 @@ function CommentsPage({ postId }) {
         placeholder="Remember, be nice and respectful !"
       />
       
-      <FontAwesomeIcon icon={faRocketchat} style={{color:'#1B283D'}} onClick={handleSubmitComment}/>
+      <FontAwesomeIcon icon={faRocketchat} style={{color:'#FFC159', fontSize: '28px'}} onClick={handleSubmitComment} />
       
     </div>
     </div>

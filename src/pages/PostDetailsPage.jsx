@@ -47,17 +47,14 @@ function PostsPage() {
   }
 
   return (
-    <>
     <div className="post-board">
-      
-
       <div className="post-body">
         {loading && <p>Loading...</p>}
         {post && (
           <>
             <div className="post-left">
               <img className='screenshot' src={post.image1} alt={post.title} />
-              <div style={{ marginTop: "20px" }}>
+              <div className='preview' style={{ marginTop: "20px" }}>
                 <button onClick={togglePreviewVisibility}>
                   {previewVisible ? "Hide" : "Show CSS"}
                 </button>
@@ -73,58 +70,57 @@ function PostsPage() {
                 )}
               </div>
             </div>
+
             <div className="post-right">
-            <div className="post-author">
-        
-          {post.author && (
-            <>
-              <img src={post.author.img} alt={post.author.username} />
-              <Link to={`/creators/${post.author._id}`}>
-                <h3>@{post.author.username}</h3>
-              </Link>
-            </>
-          )}
-          <div className="author-job">
-          <FontAwesomeIcon icon={ faLaptop } style={{color:'white'}} />
-          <br/>
-          <p>{post.author.job}</p>
-          </div>
-        
-      </div>
+              <div className="post-author">
+                {post.author && (
+                  <>
+                    <img src={post.author.img} alt={post.author.username} />
+                    <Link to={`/creators/${post.author._id}`}>
+                      <h3>@{post.author.username}</h3>
+                    </Link>
+                  </>
+                )}
+                <div className="author-job">
+                  <FontAwesomeIcon icon={ faLaptop } style={{color:'white'}} />
+                  <br/>
+                  <p>{post.author.job}</p>
+                </div> {/* closing div for author-job */}
+              </div> {/* closing div for post-author */}
+
               <div className='post-informations'>
-              <h2>{post.title}</h2>
-              {post.linkToWebsite ? (
-                <a href={post.linkToWebsite} target="_blank">
-                  <FontAwesomeIcon className="github-icon" icon={faGlobe} style={{color:'#FFC159'}} />
-                </a>
-              ) : (
-                <FontAwesomeIcon className="github-icon" disabled icon={faGlobe} style={{color:'darkgray'}}/>
-              )}
-              {post.linkToCode ? (
-                <a href={post.linkToCode} target="_blank">
-                  <FontAwesomeIcon className="github-icon" icon={faGithub} style={{color:'#FFC159'}} />
-                </a>
-              ) : (
-                <FontAwesomeIcon className="github-icon" disabled icon={faGithub} style={{color:'darkgray'}}/>
-              )}
-              <label>{post.category}</label>
-              <p>{post.tags}</p>
+                <h2>{post.title}</h2>
+                {post.linkToWebsite ? (
+                  <a href={post.linkToWebsite} target="_blank">
+                    <FontAwesomeIcon icon={faGlobe} style={{color:'#FFC159', fontSize: '25px'}} />
+                  </a>
+                ) : (
+                  <FontAwesomeIcon disabled icon={faGlobe} style={{color:'darkgray', fontSize: '25px'}}/>
+                )}
+                {post.linkToCode ? (
+                  <a href={post.linkToCode} target="_blank">
+                    <FontAwesomeIcon icon={faGithub} style={{color:'#FFC159', fontSize: '25px'}} />
+                  </a>
+                ) : (
+                  <FontAwesomeIcon disabled icon={faGithub} style={{color:'darkgray', fontSize: '25px'}}/>
+                )}
+                <label>{post.category}</label>
+                <p>{post.tags}</p>
+              </div>
 
               <div className="addtofav-div">
-              <p>Add to Fav :</p>
-              <AddToFavorites postId={id} />
+                <p>Add to Fav :</p>
+                <AddToFavorites postId={id} />
               </div>
-            </div>
-            </div>
+
+              <div className='comments-section'>
+                <CommentsPage postId={id} />
+              </div>
+            </div> {/* closing div for post-right */}
           </>
         )}
-      </div>
-      
-      
-    </div>
-
-
-    </>
+      </div> {/* closing div for post-body */}
+    </div> 
   );
 }
 
