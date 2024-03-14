@@ -242,24 +242,20 @@ gap: 0px;
 .UpdatePostPage button {
     border: none;
     border-radius: 10px;
-    background-color: "#FFC159";
-    color: black;
+    background-color: #FFC159;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 10px;
     margin: 4px 2px;
     transition-duration: 0.2s;
     cursor: pointer;
 }
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+button:hover {
+    background-color: #eac078; 
 }
+
 
 .edit-profile {
     display: flex;
@@ -312,12 +308,12 @@ gap: 0px;
 .edit-profile button {
     border: none;
     border-radius: 10px;
-    background-color: "#FFC159";
-    color: black;
+    background-color: #FFC159;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 10px;
     margin: 4px 2px;
     transition-duration: 0.2s;
     cursor: pointer;
@@ -325,7 +321,9 @@ gap: 0px;
 
 
 
-
+button:hover {
+    background-color: #eac078; 
+}
 
 
 
