@@ -1,0 +1,91 @@
+.SignupPage {
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    gap: 2vh;
+    width: 60vw;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+}
+
+.SignupPage h1 {
+    color: #B8D2CF;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 3vh;
+}
+
+.SignupPage p {
+    color: #1B283D;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 3vh;
+
+}
+
+.header {
+    border-radius: 10px;
+    background-color: #1B283D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header img {
+    width: 5vw;
+    margin: 0.5vh;
+}
+
+.SignupPage label {
+    color: #B8D2CF;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 2vh;
+}
+
+.SignupPage form {
+    border-radius: 10px;
+    display: flex;
+    background-color: #1B283D;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+}
+
+.SignupPage input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    background-color: #B8D2CF;
+}
+
+.SignupPage button {
+    border: none;
+    border-radius: 10px;
+    background-color: "#FFC159";
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vh;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}

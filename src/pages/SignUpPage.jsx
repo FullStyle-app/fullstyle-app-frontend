@@ -4,6 +4,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+//STYLE
+import '../CSS/Forms.css'
+import favicon from '../img/fav-icon.png'
+
 
 
 function SignupPage(props) {
@@ -48,9 +52,15 @@ function SignupPage(props) {
   
   return (
     <div className="SignupPage">
+
+      <div className="header">
+      <img src={favicon} alt="favicon"/>
       <h1>Sign Up</h1>
+      <img src={favicon} alt="favicon"/>
+      </div>
 
       <form onSubmit={handleSignupSubmit}>
+        <div className="pair">
         <label>Email:</label>
         <input 
           type="email"
@@ -58,7 +68,9 @@ function SignupPage(props) {
           value={email}
           onChange={handleEmail}
         />
+        </div>
 
+        <div className="pair">
         <label>Password:</label>
         <input 
           type="password"
@@ -66,7 +78,9 @@ function SignupPage(props) {
           value={password}
           onChange={handlePassword}
         />
+        </div>
 
+        <div className="pair">
         <label>Username:</label>
         <input 
           type="text"
@@ -74,7 +88,9 @@ function SignupPage(props) {
           value={username}
           onChange={handleUsername}
         />
+        </div>
 
+        <div className="pair">
         <label>Bio:</label>
         <input 
           type="text"
@@ -82,7 +98,9 @@ function SignupPage(props) {
           value={bio}
           onChange={handleBio}
         />
+        </div>
 
+        <div className="pair">
         <label>Job:</label>
         <input 
           type="text"
@@ -90,7 +108,9 @@ function SignupPage(props) {
           value={job}
           onChange={handleJob}
         />
+        </div>
 
+        <div className="pair">
         <label>Location:</label>
         <input 
           type="text"
@@ -98,7 +118,9 @@ function SignupPage(props) {
           value={location}
           onChange={handleLocation}
         />
+        </div>
 
+        <div className='pair'>
         <label>Github:</label>
         <input 
           type="text"
@@ -106,6 +128,7 @@ function SignupPage(props) {
           value={github}
           onChange={handleGithub}
         />
+        </div>
       
        
 
