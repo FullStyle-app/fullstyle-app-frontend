@@ -47,10 +47,10 @@ function PostsPage() {
   }
 
   return (
+  
+    
     <div className="post-board">
-      <Link to="/">
-        <button className="btn">Back</button>
-      </Link>
+      
       <div className="post-body">
         {loading && <p>Loading...</p>}
         {post && (
@@ -124,6 +124,7 @@ function PostsPage() {
         )}
       </div> {/* closing div for post-body */}
     </div> 
+
   );
 }
 

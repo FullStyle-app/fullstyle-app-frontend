@@ -71,7 +71,7 @@ function CommentsPage({ postId }) {
       
       <FontAwesomeIcon icon={faRocketchat} style={{color:'#FFC159', fontSize: '28px'}} onClick={handleSubmitComment} />
       
-      <button className ="btn"onClick={handleSubmitComment}>Submit Comment</button>
+      
     </div>
     </div>
   );
