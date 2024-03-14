@@ -48,7 +48,7 @@ function CommentsPage({ postId }) {
 
   return (
     <div className='comments-section'>
-      <h1>Feedbacks</h1>
+      <h2>Feedbacks</h2>
       
       {Array.isArray(comments) && comments.length > 0 ? (
         comments.map(comment => (

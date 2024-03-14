@@ -133,7 +133,7 @@ padding-bottom: 2vh;
 .post-informations h2 {
     margin-bottom: 2vh;
     color: white;
-
+    font-size:large;
 }
 
 .post-informations label {
@@ -150,6 +150,12 @@ padding-bottom: 2vh;
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+.comments-section h2 {
+    margin-bottom: 2vh;
+    color: white;
+    font-size:large;
 }
 
 .comment-form textarea {
@@ -179,6 +185,31 @@ padding-bottom: 2vh;
 .preview-container {
     max-width: 40vw;
     overflow-x: auto;
+}
+
+@media screen and (max-width: 768px){
+
+    .post-body  {
+        display: flex;
+        flex-direction: column;
+        margin-right:auto;
+        margin-left: auto;
+        justify-content: center;
+        margin-bottom: 2vh;
+    }
+    .post-right {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .post-left {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .post-left img {
+        width: 80%;
+    }
 }
 
 
