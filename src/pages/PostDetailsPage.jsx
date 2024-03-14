@@ -47,10 +47,10 @@ function PostsPage() {
   }
 
   return (
-  
-    
+
+
     <div className="post-board">
-      
+
       <div className="post-body">
         {loading && <p>Loading...</p>}
         {post && (
@@ -67,7 +67,7 @@ function PostsPage() {
                     style={{ backgroundColor: "#1B283D", padding: "5px" }}
                   >
                     <SyntaxHighlighter language="javascript" style={atomDark} >
-                      {post.description} 
+                      {post.description}
                     </SyntaxHighlighter>
                   </div>
                 )}
@@ -85,8 +85,8 @@ function PostsPage() {
                   </>
                 )}
                 <div className="author-job">
-                  <FontAwesomeIcon icon={ faLaptop } style={{color:'white'}} />
-                  <br/>
+                  <FontAwesomeIcon icon={faLaptop} style={{ color: 'white' }} />
+                  <br />
                   <p>{post.author.job}</p>
                 </div> {/* closing div for author-job */}
               </div> {/* closing div for post-author */}
@@ -95,22 +95,21 @@ function PostsPage() {
                 <h2>{post.title}</h2>
                 {post.linkToWebsite ? (
                   <a href={post.linkToWebsite} target="_blank">
-                    <FontAwesomeIcon icon={faGlobe} style={{color:'#FFC159', fontSize: '25px'}} />
+                    <FontAwesomeIcon icon={faGlobe} style={{ color: '#FFC159', fontSize: '25px' }} />
                   </a>
                 ) : (
-                  <FontAwesomeIcon disabled icon={faGlobe} style={{color:'darkgray', fontSize: '25px'}}/>
+                  <FontAwesomeIcon disabled icon={faGlobe} style={{ color: 'darkgray', fontSize: '25px' }} />
                 )}
                 {post.linkToCode ? (
-                  <a href={post.linkToCode} target="_blank">
-                    <FontAwesomeIcon icon={faGithub} style={{color:'#FFC159', fontSize: '25px'}} />
+                  <a href={post.linkToCode} target="_blank" style={{ marginLeft: '5px' }}> {/* Add margin to the left of GitHub icon */}
+                    <FontAwesomeIcon icon={faGithub} style={{ color: '#FFC159', fontSize: '25px' }} />
                   </a>
                 ) : (
-                  <FontAwesomeIcon disabled icon={faGithub} style={{color:'darkgray', fontSize: '25px'}}/>
+                  <FontAwesomeIcon disabled icon={faGithub} style={{ color: 'darkgray', fontSize: '25px' }} />
                 )}
                 <label>{post.category}</label>
                 <p>{post.tags}</p>
               </div>
-
               <div className="addtofav-div">
                 <p>Add to Fav :</p>
                 <AddToFavorites postId={id} />
@@ -123,7 +122,7 @@ function PostsPage() {
           </>
         )}
       </div> {/* closing div for post-body */}
-    </div> 
+    </div>
 
   );
 }
