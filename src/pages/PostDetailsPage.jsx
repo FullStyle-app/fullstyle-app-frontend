@@ -38,52 +38,38 @@ function PostsPage() {
 
   return (
     <div className="post-board">
-
       <Link to="/">
         <button>Back</button>
       </Link>
 
-<div className="post-body">
-      {loading && <p>Loading...</p>}
-      <div className='post-infos'>
+      <div className="post-body">
+        {loading && <p>Loading...</p>}
+
         {post && (
-          <>
+          <section>
             <img src={post.image1} alt={post.title} />
-            <h2>{post.title}</h2>
-            <p>{post.description}</p>
-            <p>{post.linkToWebsite}</p>
-            <p>{post.linkToCode}</p>
-            <label>{post.category}</label>
-            <p>{post.tags}</p>
-          </>
+            <div className='post-infos'>
+              <h2>{post.title}</h2>
+              <p>{post.description}</p>
+              <p>{post.linkToWebsite}</p>
+              <label>{post.category}</label>
+              <p>{post.tags}</p>
+            </div>
+          </section>
         )}
 
-<div className="post-footer">
-            <p>Add to Fav :</p>
-      <AddToFavorites postId={id} />
-      </div>
-      </div>
-
-
-      <div className="post-author">
-        <section>
-          {post.author && (
-            <>
-              <img src={post.author.img} alt={post.author.username} />
-              <Link to={`/creators/${post.author._id}`}>
-                <h3>{post.author.username}</h3>
-              </Link>
-            </>
-          )}
-          <p>{post.author.job}</p>
-        </section>
+        <div className="post-footer">
+          <p>Add to Fav :</p>
+          <AddToFavorites postId={id} />
+        </div>
       </div>
 
+      <p>{post.linkToCode}</p>
+
+      <div className="post-comments">
+        <CommentsPage postId={id} />
       </div>
-     <div className="post-comments">
-      <CommentsPage postId={id} />
-      </div>
-      </div>
+    </div>
   );
 }
 export default PostsPage;

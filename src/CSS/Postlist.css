@@ -3,33 +3,33 @@
     flex-direction: row;
     align-items: stretch; /* Ensure all containers stretch to the same height */
     border-radius: 10px;
-    width: 80vw; /* Adjusted width to 80% of the viewport width */
+    /* Adjusted width to 80% of the viewport width */
     max-width: 1000px; /* Added max-width to prevent container from becoming too wide */
     margin: 20px auto; /* Centering the container */
     padding: 20px;
     gap: 20px;
+    flex-wrap: wrap;;
 }
 
 
 
 .post-card {
-    background-color: #1B283D; /* Set background color to white */
+    background-color: #1B283D;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.964);
-    width: calc(50% - 20px); /* Adjusted width to take up half of the container minus margin */
+    width: 35vw; /* Adjusted width to take up half of the container minus margin */
     margin-bottom: 20px; /* Added margin-bottom */
-    display: flex; /* Ensure content inside the card stretches */
-    flex-direction: column; /* Content stacks vertically */
+    display: flex; 
+    flex-direction: row; 
 }
 
 .post-card img {
-    width: 100%;
-    height: auto;
+    width: 25vw;;
     border-radius: 10px; /* Ensure images fit within rounded corners */
 }
 .post-card h2 {
     font-size: 12px;
-    color: rgb(255, 255, 255);
+    color: #B8D2CF;
 }
 .club-info {
     padding: 10px;

@@ -4,12 +4,20 @@ import CreatePost from "../components/CreatePost";
 import '../CSS/Homepage.css';
 function Homepage() {
   return (
-    <div className="home">
+  <div className="homepage">
+    <h1>Home</h1>
+
+  <div className="create-post">
+<CreatePost />
+  </div>
+  
+    <div className="post-list">
 
       <PostList />
-      <CreatePost />
+      
 
     </div>
+  </div>
   );
 } 
 
