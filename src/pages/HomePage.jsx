@@ -2,10 +2,16 @@ import React from "react";
 import PostList from "../components/PostList";
 import CreatePost from "../components/CreatePost";
 import '../CSS/Homepage.css';
+import cover from '../img/cover.png';
+
 function Homepage() {
   return (
   <div className="homepage">
-    <h1>Home</h1>
+    <img 
+    className='cover'
+    src={cover}
+    alt='cover'
+    />
 
   <div className="create-post">
 <CreatePost />

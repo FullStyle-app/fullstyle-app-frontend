@@ -14,3 +14,9 @@ body {
     margin-right: auto;
 }
 
+.cover {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+}
