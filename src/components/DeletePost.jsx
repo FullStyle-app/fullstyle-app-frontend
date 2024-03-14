@@ -15,6 +15,7 @@ const DeletePost = ({ postId }) => {
 
 
   const handleDelete = () => {
+    console.log('postId:', postId);
     const confirmed = window.confirm("Are you sure you want to delete this post?");
     if (!confirmed) {
       return;
@@ -47,7 +48,5 @@ const DeletePost = ({ postId }) => {
 
 export default DeletePost;
 
-// when post deleted, add a pop up message to confirm deletion
-// then navigate to home page
 
     

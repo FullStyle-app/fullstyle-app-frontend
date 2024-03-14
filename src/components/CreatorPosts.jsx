@@ -46,7 +46,7 @@ function CreatorPosts({ id }) {
 
                 
                 <section className="creator-buttons-board">
-                  <Link to={`/posts/${id}/edit`}>
+                  <Link to={`/posts/${post._id}/edit`}>
                     <FontAwesomeIcon
                       className="edit-button"
                       icon={faRocket}
@@ -54,7 +54,7 @@ function CreatorPosts({ id }) {
                     />
                     </Link>
                   
-                  <DeletePost postId={id} />
+                  <DeletePost postId={post._id} />
 
                 </section>
                 
