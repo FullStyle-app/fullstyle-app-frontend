@@ -1,84 +1,121 @@
-p {
-    font-size: 1.5vh;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    
-}
-
-h1 {
-    font-size: 3vh;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-}
-
 .post-board {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    padding: 20px;
-    width: 80vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #1B283D;
+    width: 95vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: #1B283D;
     border-radius: 10px;
-}
-
-.post-board button {
-    flex-direction: start;
+    gap: 2vw;
 }
 
 .post-body {
     display: flex;
-    flex-direction: space-evenly;
-    gap: 6vw;
+    flex-direction: row;
+    align-content: space-evenly;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #1B283D;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    gap: 2vw;
+    align-items: flex-start;
+
+}
+
+.post-left {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin-top: 2vh;
+    padding-bottom: 2vh;
+    align-items: center;
+}
+
+.screenshot {
+    width: 40vw;
+}
+
+.post-right {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    border: solid 1px black;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: sticky;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.post-author {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid black;
+}
+
+.post-author h3 {
+    font-size: larger;
+}
+
+.author-job {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+    align-content: center;
+}
+
+.addtofav-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+    align-content: center;
+    width: 100%;
+}
+
+.addtofav {
+    height: 4vh;
 }
 
 .post-author img {
     width: 10vw;
     border-radius: 50%;
+    margin-bottom: 2vh;
 }
 
-.post-author {
-    display: flex-end;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.post-info {
-    display: flex-start;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.post-informations a{
+    margin-right: 2vw;
 
 }
 
-.post-info h2 {
-    font-size: 2.5vh;
-    color: #fff;
-    text-align: center;
-    margin: 0;
+.post-informations h2 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    color: white;
 
 }
 
-.post-info img {
-    width: 20vw;
+.post-informations label {
+    background-color: #FFC159;
+    color: black;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: small;
 }
 
-.post-footer {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-}
 
-.addtofav {
-    height: 5vh;
-}
 
-.post-comments {
-    display: flex;
-    justify-content: center;
-
-}

@@ -39,7 +39,7 @@ function CreatorPosts({ id }) {
                 <Link to={`/posts/${post._id}`}>
                 <img src={post.image1} alt={post.title} />
                 </Link>
-                <div>
+                <div className='creators-post-info'>
                   <h3>{post.title}</h3>
                   <label>{post.category}</label>
                 </div>

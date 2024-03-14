@@ -33,6 +33,9 @@
     flex-direction: row;
     gap: 6vw;;
     width: 80vw;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .about-card {
@@ -74,6 +77,9 @@
 @media screen and (max-width: 768px){
     .creators-about {
         flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 1vh;
     }
     .about-card {
         width: 80vw;

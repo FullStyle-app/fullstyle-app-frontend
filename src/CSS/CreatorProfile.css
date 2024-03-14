@@ -12,13 +12,21 @@ h1 {
 
 }
 
+.creators-post-info {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+}
+
+
 .creator-board label {
+    display: inline-block;
     font-size: 2vh;
     background-color: #FFC159;
     color: black;
     text-align: center;
-    margin: 3vw;
-    padding: 0.75vw;
+    margin: 1vw;
+    padding: 0.5vw;
     font-size: 1.5vh;
 }
 
