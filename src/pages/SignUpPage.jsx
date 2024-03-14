@@ -139,7 +139,7 @@ function SignupPage(props) {
       
    
      
-      <p>Already have an account? <Link to={"/login"}>Login</Link></p>
+      <p>Already have an account? <Link className={"link-styles"} to={"/login"}>Login</Link></p>
     </div>
   );
 }
