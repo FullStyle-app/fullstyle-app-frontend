@@ -47,7 +47,7 @@ function PostsPage() {
   return (
     <div className="post-board">
       <Link to="/">
-        <button>Back</button>
+        <button className="btn">Back</button>
       </Link>
       <div className="post-body">
         {loading && <p>Loading...</p>}
@@ -82,7 +82,7 @@ function PostsPage() {
           </section>
         </div>
         <div style={{ marginTop: '20px' }}>
-          <button onClick={togglePreviewVisibility}>
+          <button className="btn"onClick={togglePreviewVisibility}>
             {previewVisible ? 'Hide Preview' : 'Show Preview'}
           </button>
           {previewVisible && (

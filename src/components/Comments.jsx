@@ -63,7 +63,7 @@ function CommentsPage({ postId }) {
         placeholder="Enter your comment"
       />
       
-      <button onClick={handleSubmitComment}>Submit Comment</button>
+      <button className ="btn"onClick={handleSubmitComment}>Submit Comment</button>
     </div>
     </div>
   );

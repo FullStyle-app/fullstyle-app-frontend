@@ -104,7 +104,7 @@ function EditProfilePage() {
         <label>Github</label>
         <input type="text" value={github} onChange={handleGithubChange} />
 
-        <button type="submit">Save</button>
+        <button className="btn"type="submit">Save</button>
       </form>
     </div>
   );
