@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 //STYLE
-import '../CSS/CreatorProfile.css'
+import '../CSS/Postlist.css';
 import favIcon from '../img/fav-icon.png'
 
 const AddToFavorites = ({ postId }) => {
@@ -13,6 +13,14 @@ const AddToFavorites = ({ postId }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
+
+  const Popup = ({ message }) => {
+    return (
+      <div className="popup">
+        <p>{message}</p>
+      </div>
+    );
+  };
 
   const handleAddToFavorites = () => {
     if (!storedToken) {
@@ -34,6 +42,7 @@ const AddToFavorites = ({ postId }) => {
         if (favorites.includes(postId)) {
            setMessage('This post is already in your favorites !')
         } else {
+          console.log("Post added to favorites")
           setMessage("Post successfully added to favorites");
           setFavorites([...favorites, postId]); // Update state
           navigate(`/posts/${postId}`);
@@ -46,8 +55,9 @@ const AddToFavorites = ({ postId }) => {
 
   return (
     <div>
-      {message && <p>{message}</p>}
+      
       <img className="addtofav" onClick={handleAddToFavorites} src={favIcon} />
+      {message && <Popup message={message} />}
     </div>
   );
 };

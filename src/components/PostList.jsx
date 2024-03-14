@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/Postlist.css';
+import AddToFavorites from './AddToFav';
 
 function PostList() {
     const [posts, setPosts] = useState([]);
@@ -33,11 +34,11 @@ function PostList() {
                        
                     />
                     <div className="post-content">
-                        <h2>{post.title}</h2>
                       
+                        <AddToFavorites postId={post._id} />
                         <button>
                             <Link to={`/posts/${post._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                              See Details
+                              More
                             </Link>
                         </button>
                     </div>

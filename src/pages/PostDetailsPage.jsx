@@ -98,7 +98,7 @@ function PostsPage() {
       <div className="post-comments">
         <CommentsPage postId={id} />
       </div>
-    </div>
+      </div>
   );
 }
 

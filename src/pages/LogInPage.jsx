@@ -5,6 +5,10 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
+//STYLE
+import '../CSS/Forms.css'
+import favicon from '../img/fav-icon.png'
+
 
 
 
@@ -45,9 +49,16 @@ function LoginPage(props) {
   
   return (
     <div className="LoginPage">
+      <div className="header">
+      <img src={favicon} alt="favicon"/>
       <h1>Login</h1>
+      <img src={favicon} alt="favicon"/>
+      </div>
+
 
       <form onSubmit={handleLoginSubmit}>
+        
+      <div className="pair">
         <label>Email:</label>
         <input
           type="email"
@@ -55,7 +66,9 @@ function LoginPage(props) {
           value={email}
           onChange={handleEmail}
         />
+        </div>
 
+        <div className="pair">
         <label>Password:</label>
         <input
           type="password"
@@ -63,13 +76,16 @@ function LoginPage(props) {
           value={password}
           onChange={handlePassword}
         />
+        </div>
 
         <button type="submit">Login</button>
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
+<div className='signup-link'>
       <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link className={"link-styles"} to={"/signup"}>Sign Up</Link>
+      </div>
     </div>
   )
 }

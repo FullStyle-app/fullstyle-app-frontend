@@ -6,3 +6,17 @@ body {
     font-family:'Courier New', Courier, monospace;
 }
 
+.home {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+
+}
