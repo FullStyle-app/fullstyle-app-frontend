@@ -27,7 +27,59 @@
     size: 3vh;
 
 }
+.CreatePostPage{
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    gap: 2vh;
+    width: 60vw;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 8vh;
+}
+.CreatePostPage h1 {
+    color: #B8D2CF;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 3vh;
+}
 
+.CreatePostPage p {
+    color: #1B283D;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 3vh;
+
+}
+.CreatePostPage button {
+    flex-direction: start;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFC159;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+.CreatePostPage button:hover {
+    background-color: #eac078; 
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  .hide-background {
+    background-color: transparent; /* Set the background color to transparent */
+  }
 .header {
     border-radius: 10px;
     background-color: #1B283D;
@@ -35,6 +87,34 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.SignupPage label {
+    color: #B8D2CF;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    size: 2vh;
+}
+
+.CreatePostPage form {
+    border-radius: 10px;
+    display: flex;
+    background-color: #1B283D;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.CreatePostPage input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    background-color: #B8D2CF;
 }
 
 .header img {
