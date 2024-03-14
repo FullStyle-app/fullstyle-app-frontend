@@ -5,9 +5,10 @@ import '../CSS/Homepage.css';
 function Homepage() {
   return (
     <div className="home">
+      <CreatePost />
 
       <PostList />
-      <CreatePost />
+      
 
     </div>
   );

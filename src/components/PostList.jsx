@@ -29,6 +29,7 @@ function PostList() {
                     <img
                         src={post.image1}
                         alt={post.title}
+                        className='post-image'
                        
                     />
                     <div className="post-content">

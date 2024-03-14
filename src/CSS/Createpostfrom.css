@@ -53,4 +53,6 @@
     color: red;
     margin-top: 10px;
   }
-  
+  .hide-background {
+    background-color: transparent; /* Set the background color to transparent */
+  }

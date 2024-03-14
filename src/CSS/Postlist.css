@@ -1,6 +1,7 @@
 .postlist-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+    justify-content: space-between; /* Add space between items */
     align-items: stretch; /* Ensure all containers stretch to the same height */
     border-radius: 10px;
     width: 80vw; /* Adjusted width to 80% of the viewport width */
@@ -9,8 +10,6 @@
     padding: 20px;
     gap: 20px;
 }
-
-
 
 .post-card {
     background-color: #1B283D; /* Set background color to white */
@@ -23,16 +22,14 @@
 }
 
 .post-card img {
-    width: 100%;
-    height: auto;
+    width: 250px; /* Adjust this value as needed */
+    height: 250px;
     border-radius: 10px; /* Ensure images fit within rounded corners */
 }
+
 .post-card h2 {
     font-size: 12px;
     color: rgb(255, 255, 255);
-}
-.club-info {
-    padding: 10px;
 }
 
 .post-content {
@@ -58,10 +55,8 @@
 }
 
 .post-content button:hover {
-    background-color: "#FFC159"
-    /* Orange on hover */
+    background-color: "#FFC159"; /* Orange on hover */
 }
-
 
 @media only screen and (max-width: 768px) {
     .post-card {

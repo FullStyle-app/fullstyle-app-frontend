@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
 import "../CSS/Createpostfrom.css";
-
-
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css'; // Import Prism.js stylesheet
+import 'prismjs/components/prism-javascript'; // Import the JavaScript language support
+// Import other language components as needed
 
 function CreatePostPage() {
   const [title, setTitle] = useState("");
@@ -15,6 +17,7 @@ function CreatePostPage() {
   const [category, setCategory] = useState("");
   const [tags, setTags] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [hideForm, setHideForm] = useState(true); // Initially hide the form
   const navigate = useNavigate();
 
   const handleTitleChange = (e) => setTitle(e.target.value);
@@ -24,10 +27,8 @@ function CreatePostPage() {
   const handleCategoryChange = (e) => setCategory(e.target.value);
   const handleTagsChange = (e) => setTags(e.target.value);
 
-    // AUTH
-    const storedToken = localStorage.getItem('authToken');
+  const storedToken = localStorage.getItem('authToken');
 
-  // Function to handle file upload image1
   const handleFileUpload1 = (e) => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
     const uploadData = new FormData();
@@ -41,7 +42,6 @@ function CreatePostPage() {
       })
       .catch((err) => console.log("Error while uploading the file: ", err));
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,7 +57,7 @@ function CreatePostPage() {
     };
 
     axios
-      .post(`${import.meta.env.VITE_API_URL}/posts/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}`} })
+      .post(`${import.meta.env.VITE_API_URL}/posts/create`, requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
       .then((response) => {
         console.log("Post created:", response.data);
         navigate(`/posts/${response.data._id}`);
@@ -68,73 +68,84 @@ function CreatePostPage() {
       });
   };
 
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [description]);
+
+  const toggleForm = () => {
+    setHideForm(!hideForm);
+  };
+
   return (
-    <div className="CreatePostPage">
-      <h1>Create a New Post</h1>
+    <div className={`CreatePostPage ${hideForm ? 'hide-background' : ''}`}>
 
-      <form onSubmit={handleSubmit}>
-        {/* Other input fields */}
-
-        <label>Screenshot:</label>
-        <input
-          type="file"
-          name="image1"
-          onChange={handleFileUpload1}
-          required
-        />
-
-        <label>Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={handleTitleChange}
-          required
-        />
-
-        <label>Description</label>
-        <input
-          type="text"
-          name="description"
-          value={description}
-          onChange={handleDescriptionChange}
-        />
-
-        <label>Link to website</label>
-        <input
-          type="text"
-          name="linkToWebsite"
-          value={linkToWebsite}
-          onChange={handleLinkToWebsiteChange}
-        />
-
-        <label>Link to code</label>
-        <input
-          type="text"
-          name="linkToCode"
-          value={linkToCode}
-          onChange={handleLinkToCodeChange}
-        />
-
-        <label>Category</label>
-        <input
-          type="text"
-          name="category"
-          value={category}
-          onChange={handleCategoryChange}
-        />
-
-        <label>Tags</label>
-        <input
-          type="text"
-          name="tags"
-          value={tags}
-          onChange={handleTagsChange}
-        />
-
-        <button type="submit">Create Post</button>
-      </form>
-
+      <button className={`toggleButton ${hideForm ? 'round' : ''}`} onClick={toggleForm}>
+        {hideForm ? "+ Add Style" : "Hide Form"}
+      </button>
+      {!hideForm && (
+        <form onSubmit={handleSubmit}>
+          <label>Screenshot:</label>
+          <input
+            type="file"
+            name="image1"
+            onChange={handleFileUpload1}
+            required
+          />
+  
+          <label>Title</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={handleTitleChange}
+            required
+          />
+  
+          <label>Description</label>
+          <textarea
+            name="description"
+            value={description}
+            onChange={handleDescriptionChange}
+            style={{ display: hideForm ? 'none' : 'block' }} // Hide/show the textarea based on hideForm state
+            className="language-javascript" // Add the appropriate language class for code highlighting
+            placeholder="Paste your code here..."
+          />
+  
+          <label>Link to website</label>
+          <input
+            type="text"
+            name="linkToWebsite"
+            value={linkToWebsite}
+            onChange={handleLinkToWebsiteChange}
+          />
+  
+          <label>Link to code</label>
+          <input
+            type="text"
+            name="linkToCode"
+            value={linkToCode}
+            onChange={handleLinkToCodeChange}
+          />
+  
+          <label>Category</label>
+          <input
+            type="text"
+            name="category"
+            value={category}
+            onChange={handleCategoryChange}
+          />
+  
+          <label>Tags</label>
+          <input
+            type="text"
+            name="tags"
+            value={tags}
+            onChange={handleTagsChange}
+          />
+  
+          <button type="submit">Create Post</button>
+        </form>
+      )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
