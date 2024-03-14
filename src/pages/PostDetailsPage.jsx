@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import AddToFavorites from "../components/AddToFav";
 import CommentsPage from "../components/Comments";
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose your preferred syntax highlighting style
+
 //STYLE
 import "../CSS/PostDetails.css";
 import logo from "../img/logo-footer.png";
@@ -14,6 +17,7 @@ function PostsPage() {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [previewVisible, setPreviewVisible] = useState(false); // Initially hide the preview
 
   useEffect(() => {
     axios
@@ -28,6 +32,10 @@ function PostsPage() {
       });
   }, [id]);
 
+  const togglePreviewVisibility = () => {
+    setPreviewVisible(!previewVisible);
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -41,35 +49,57 @@ function PostsPage() {
       <Link to="/">
         <button>Back</button>
       </Link>
-
       <div className="post-body">
         {loading && <p>Loading...</p>}
-
-        {post && (
-          <section>
-            <img src={post.image1} alt={post.title} />
-            <div className='post-infos'>
+        <div className='post-infos'>
+          {post && (
+            <>
+              <img src={post.image1} alt={post.title} />
               <h2>{post.title}</h2>
               <p>{post.description}</p>
               <p>{post.linkToWebsite}</p>
+              <p>{post.linkToCode}</p>
               <label>{post.category}</label>
               <p>{post.tags}</p>
-            </div>
+            </>
+          )}
+          <div className="post-footer">
+            <p>Add to Fav :</p>
+            <AddToFavorites postId={id} />
+          </div>
+        </div>
+        <div className="post-author">
+          <section>
+            {post.author && (
+              <>
+                <img src={post.author.img} alt={post.author.username} />
+                <Link to={`/creators/${post.author._id}`}>
+                  <h3>{post.author.username}</h3>
+                </Link>
+              </>
+            )}
+            <p>{post.author.job}</p>
           </section>
-        )}
-
-        <div className="post-footer">
-          <p>Add to Fav :</p>
-          <AddToFavorites postId={id} />
+        </div>
+        <div style={{ marginTop: '20px' }}>
+          <button onClick={togglePreviewVisibility}>
+            {previewVisible ? 'Hide Preview' : 'Show Preview'}
+          </button>
+          {previewVisible && (
+            <div className="preview-container" style={{ backgroundColor: '#f0f0f0', padding: '5px' }}>
+              <label>Preview:</label>
+              <SyntaxHighlighter language="javascript" style={dark}>
+                {post.description} {/* Render the submitted code */}
+              </SyntaxHighlighter>
+            </div>
+          )}
         </div>
       </div>
-
-      <p>{post.linkToCode}</p>
-
       <div className="post-comments">
         <CommentsPage postId={id} />
       </div>
-    </div>
+      </div>
   );
 }
+
 export default PostsPage;

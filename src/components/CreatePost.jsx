@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
 import "../CSS/Createpostfrom.css";
+import { AuthContext } from '../context/auth.context';
+
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose your preferred syntax highlighting style
@@ -18,6 +20,7 @@ function CreatePostPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const [hideForm, setHideForm] = useState(true); // Initially hide the form
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
 
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
@@ -47,7 +50,7 @@ function CreatePostPage() {
 
     const requestBody = {
       title,
-      description,
+      description, // Change submitted code to description
       image1,
       linkToWebsite,
       linkToCode,
@@ -71,9 +74,12 @@ function CreatePostPage() {
     setHideForm(!hideForm);
   };
 
+  if (!isLoggedIn) {
+    return null; // Render nothing if not logged in
+  }
+
   return (
     <div className={`CreatePostPage ${hideForm ? 'hide-background' : ''}`}>
-
       <button className={`toggleButton ${hideForm ? 'round' : ''}`} onClick={toggleForm}>
         {hideForm ? "+ Add Style" : "Hide Form"}
       </button>
@@ -104,10 +110,10 @@ function CreatePostPage() {
             style={{ display: hideForm ? 'none' : 'block' }}
             placeholder="Paste your code here..."
           />
-          <div style={{ marginTop: '20px', maxHeight: '200px', overflow: 'auto' }}>
+          <div style={{ marginTop: '20px', maxHeight: '200px', overflowY: 'auto' }}>
             <label>Preview:</label>
             <SyntaxHighlighter language="javascript" style={dark}>
-              {description}
+              {description} {/* Render the submitted code */}
             </SyntaxHighlighter>
           </div>
 
@@ -147,7 +153,6 @@ function CreatePostPage() {
         </form>
       )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
     </div>
   );
 }
