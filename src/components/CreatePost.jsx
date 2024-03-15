@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import service from "../services/file-upload.service";
-import "../CSS/Createpostfrom.css";
 import { AuthContext } from '../context/auth.context';
+import "../CSS/Forms.css";
 
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -102,7 +102,7 @@ function CreatePostPage() {
             required
           />
 
-          <label>Your Code</label>
+          <label >Your Code</label>
           <textarea
             name="description"
             value={description}

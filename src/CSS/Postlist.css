@@ -96,4 +96,9 @@
     .post-image {
         padding-top: 1vh;
     }
+    .post-content button {
+        padding: 6px 8px; /* Adjusted padding */
+        font-size: 6px; /* Adjusted font size */
+        margin: 2px; /* Adjusted margin */
+    }
 }
