@@ -113,7 +113,7 @@ function CreatePostPage() {
           <div style={{ marginTop: '20px', maxHeight: '200px', overflowY: 'auto' }}>
             <label>Preview:</label>
             <SyntaxHighlighter language="javascript" style={dark}>
-              {description} {/* Render the submitted code */}
+              {description} 
             </SyntaxHighlighter>
           </div>
 
