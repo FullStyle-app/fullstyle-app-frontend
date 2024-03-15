@@ -58,7 +58,7 @@ function PostsPage() {
             <div className="post-left">
               <img className='screenshot' src={post.image1} alt={post.title} />
               <div className='preview' style={{ marginTop: "20px" }}>
-                <button onClick={togglePreviewVisibility}>
+                <button className="btn" onClick={togglePreviewVisibility}>
                   {previewVisible ? "Hide" : "Show CSS"}
                 </button>
                 {previewVisible && (

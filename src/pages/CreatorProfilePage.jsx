@@ -47,7 +47,7 @@ function CreatorProfilePage() {
       
         <div className="creator-header">
         <Link to={`/edit-profile/${id}`}>
-          <button>Edit Profile</button>
+          <button className="edit-button">Edit Profile</button>
         </Link>
         </div>
         <div className='creator-board'>

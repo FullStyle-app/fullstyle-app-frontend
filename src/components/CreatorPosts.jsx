@@ -48,7 +48,7 @@ function CreatorPosts({ id }) {
                 <section className="creator-buttons-board">
                   <Link to={`/posts/${post._id}/edit`}>
                     <FontAwesomeIcon
-                      className="edit-button"
+                      className="edits-button"
                       icon={faRocket}
                       style={{ color: "#FFC159", fontSize: '3vh' }}
                     />

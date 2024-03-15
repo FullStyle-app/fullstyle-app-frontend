@@ -75,12 +75,12 @@ function EditProfilePage() {
     if (img !== "") {
       requestBody.img = img;
     };
-    
+
     axios.put(
-       `${import.meta.env.VITE_API_URL}/users/${id}`, 
-        requestBody, 
-        { headers: { Authorization: `Bearer ${storedToken}`} }
-      )
+      `${import.meta.env.VITE_API_URL}/users/${id}`,
+      requestBody,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+    )
       .then((response) => {
         console.log(response);
         navigate(`/creators/${id}`);
@@ -93,43 +93,43 @@ function EditProfilePage() {
   return (
     <div className='edit-profile'>
       <div className="header">
-      <img src={favicon} alt="favicon"/>
-      <h1>Edit your profile</h1>
-      <img src={favicon} alt="favicon"/>
+        <img src={favicon} alt="favicon" />
+        <h1>Edit your profile</h1>
+        <img src={favicon} alt="favicon" />
       </div>
-      
+
       <form onSubmit={handleSubmit}>
 
-      <div className="pair">
-        <label>Profile Picture</label>
-        <input type="file" onChange={handleFileUpload} />
+        <div className="pair">
+          <label>Profile Picture</label>
+          <input type="file" onChange={handleFileUpload} />
         </div>
 
         <div className="pair">
-        <label>Bio</label>
-        <input type="text" value={bio} onChange={handleBioChange} />
+          <label>Bio</label>
+          <input type="text" value={bio} onChange={handleBioChange} />
         </div>
 
         <div className="pair">
-        <label>Job</label>
-        <input type="text" value={job} onChange={handleJobChange} />
-</div>
-
-        <div className="pair">
-        <label>Location</label>
-        <input type="text" value={location} onChange={handleLocationChange} />
+          <label>Job</label>
+          <input type="text" value={job} onChange={handleJobChange} />
         </div>
 
         <div className="pair">
-        <label>Github</label>
-        <input type="text" value={github} onChange={handleGithubChange} />
+          <label>Location</label>
+          <input type="text" value={location} onChange={handleLocationChange} />
+        </div>
+
+        <div className="pair">
+          <label>Github</label>
+          <input type="text" value={github} onChange={handleGithubChange} />
         </div>
 
         <div className="buttons">
-        <button onClick={() => navigate('/')}>Cancel</button>
-        <button type="submit">Save</button>
+          <button onClick={() => navigate('/')}>Cancel</button>
+          <button type="submit">Save</button>
         </div>
-        
+
       </form>
     </div>
   );

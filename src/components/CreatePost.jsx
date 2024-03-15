@@ -6,8 +6,8 @@ import { AuthContext } from '../context/auth.context';
 import "../CSS/Forms.css";
 
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose your preferred syntax highlighting style
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"; // Choose your preferred syntax highlighting style
 
 function CreatePostPage() {
   const [title, setTitle] = useState("");
@@ -84,7 +84,7 @@ function CreatePostPage() {
         {hideForm ? "+ Add Style" : "Hide Form"}
       </button>
       {!hideForm && (
-        <form onSubmit={handleSubmit}>
+        <form className="CreatePostPage"onSubmit={handleSubmit}>
           <label>Screenshot:</label>
           <input
             type="file"
@@ -110,9 +110,9 @@ function CreatePostPage() {
             style={{ display: hideForm ? 'none' : 'block' }}
             placeholder="Paste your code here..."
           />
-          <div style={{ marginTop: '20px', maxHeight: '200px', overflowY: 'auto' }}>
+          <div className="preview-container" style={{ marginTop: '25px', maxHeight: '200px', overflowY: 'auto' }}>
             <label>Preview:</label>
-            <SyntaxHighlighter language="javascript" style={dark}>
+            <SyntaxHighlighter language="javascript" style={atomDark}>
               {description} {/* Render the submitted code */}
             </SyntaxHighlighter>
           </div>
